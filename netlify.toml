@@ -1,0 +1,48 @@
+[build]
+  command = "npm run check"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  PYTHON_VERSION = "3.13"
+
+# Previous public paths retain their corresponding local landing pages.
+[[redirects]]
+  from = "/services"
+  to = "/work-with-james/"
+  status = 301
+
+[[redirects]]
+  from = "/store"
+  to = "/book-shop/"
+  status = 301
+
+# Keep existing product and article deep links functional during migration.
+[[redirects]]
+  from = "/store/*"
+  to = "https://www.mybettereveryday.org/store/:splat"
+  status = 302
+
+[[redirects]]
+  from = "/blog/*"
+  to = "https://www.mybettereveryday.org/blog/:splat"
+  status = 302
+
+[[redirects]]
+  from = "/cart"
+  to = "https://www.mybettereveryday.org/cart"
+  status = 302
+
+[[redirects]]
+  from = "/speaking-engagements"
+  to = "https://www.mybettereveryday.org/speaking-engagements"
+  status = 302
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action https://www.mybettereveryday.org"

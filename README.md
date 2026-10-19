@@ -1,47 +1,31 @@
-# Better Everyday Website
+# Better Everyday website
 
-Standalone website repository for Better Everyday and James Anderson, CSCS.
+Responsive static website for James Anderson and Better Everyday Athletics. Eight complete HTML pages are in `public/`: Home, Work With James, Book + Shop, Community, About, Blog, Resources, and Contact. Each page works without JavaScript; the small navigation script adds a collapsible mobile menu.
 
-## Revamp direction
+## Local development and checks
 
-The current redesign is built around two clear conversion paths:
+Requirements: Node 22+ and Python 3.11+; no third-party packages or install step.
 
-1. Work With James for personalized coaching, Foundation membership, Legacy membership, and virtual programming.
-2. Start with Legacy of Health through the free chapter, full book, and Better Everyday shop.
+```sh
+npm run check
+```
 
-Community work, testimonials, James's credentials, and the blog support those two paths instead of competing with them on the homepage.
+This builds `dist/`, crawls every HTML reference and anchor, checks navigation and metadata, validates Netlify configuration and text contrast, and exercises the mobile menu. JavaScript syntax is also checked. For manual local review after building, serve `dist/` with any static HTTP server, for example `python3 -m http.server 8000 --directory dist`. Root-relative links require HTTP; opening an HTML file with `file://` is not supported.
 
-## What is included
+Edit HTML in `public/`, shared styles in `public/assets/styles.css`, and menu behavior in `public/assets/site.js`. Do not edit `dist/`; it is regenerated and ignored by Git. GitHub Actions runs the same checks on pushes and pull requests.
 
-- Responsive Home, Work With James, Book + Shop, Community, About, Blog, Resources, and Contact pages.
-- Better Everyday brand assets and existing photography.
-- Current Foundation and Legacy membership pricing from the live site as of August 2026.
-- Mobile navigation, improved accessibility, meta descriptions, and basic structured data.
-- Netlify configuration for clean page URLs.
+## Netlify
 
-## Brand system
+Connect this repository with build command `npm run check` and publish directory `dist`. These values are recorded in `netlify.toml`. Directory index pages supply real clean URLs, including trailing-slash requests. Netlify Pretty URLs handles normalization. Missing paths receive the custom `404.html`; there is no catch-all homepage rewrite.
 
-- Black: `#080808`
-- Better Everyday red: `#e7272d`
-- Book and action blue: `#168fd3`
-- Warm cream: `#f7f2ec`
-- Headings: League Spartan
-- Body: Nunito Sans
+Legacy `/services` and `/store` routes redirect to local coaching and book/shop pages. Existing product, article, cart, and speaking links redirect to the live Squarespace destinations. Actual checkout, enrollment, chapter delivery, contact submissions, and community support remain external. No payment or CRM integration is claimed.
 
-Red and black carry the Better Everyday identity. Blue is used strategically for the book, free resources, and selected actions.
+**Do not cut over `www.mybettereveryday.org` to this build yet.** External actions still depend on Squarespace at that address. First establish and verify a separate legacy commerce/form host, update all corresponding links and redirect destinations, then test checkout, delivery, and inquiry workflows end to end. A separate Netlify preview hostname is suitable for review.
 
-## Local preview
+## Brand and content
 
-Open `index.html` directly or serve the folder with any static server.
+October 12, 2026 materials supersede the old README: official blue `#1e90d4`, sampled red `#fc1111`, dark canvas `#101012`, Barlow Condensed headings, and Inter body copy. The logo remains an image with its original proportions and color treatment. Fonts and images are self-hosted; font license files are included. Dark primary-button text meets AA contrast on the approved blue; white normal-size text on that blue would not.
 
-## Deployment
+No local prices, testimonials, purchase buttons that simulate checkout, or new credentials have been invented. Pricing is intentionally omitted because existing membership products and the proposed package model need reconciliation. Current enrollment continues through the existing store. The prior `/services` endpoint returned 404 during implementation, so it is not used as an external CTA.
 
-The repository is ready for static deployment on Netlify. `netlify.toml` maps clean URLs to the static HTML pages.
-
-## Current external dependencies
-
-Commerce, checkout, current membership enrollment, book purchase, and contact forms still link to the live Squarespace site until the Stripe and HubSpot workflows are migrated into the standalone site.
-
-## Source site
-
-Current public site: `https://www.mybettereveryday.org/`
+See [source and asset provenance](docs/sources.md), [deployment decisions](docs/deployment.md), and [verification](docs/verification.md).

@@ -1,0 +1,13 @@
+{
+  "name": "better-everyday-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "python3 scripts/check.py && node scripts/check-menu.mjs",
+    "check": "npm run build && npm test && node --check public/assets/site.js"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
