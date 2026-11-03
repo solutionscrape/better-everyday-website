@@ -1,0 +1,111 @@
+/* Better Everyday Athletics — colour tokens
+   Source: BEA-Brand-Guide.pdf (Oct 2026) + colors.json. Dark-first:
+   :root semantics are the DARK theme. Put data-theme="light" on a section
+   (one per page: book / resources) to switch it to the light set. */
+:root{
+/* ---- Brand core ---- */
+--bea-red:#fc1111;          /* logo red: rules, marks, large type */
+--bea-blue:#1e90d4;         /* brand blue: display, links on dark */
+--bea-electric:#00a8f3;     /* focus + link hover on dark only */
+--bea-white:#ffffff;
+
+/* ---- Neutral ramp (cool, single scale) ---- */
+--neutral-50:#f5f7fa;       /* light canvas */
+--neutral-100:#e9ecf1;
+--neutral-200:#d5dae1;
+--neutral-300:#b9c1cb;      /* muted text on dark */
+--neutral-400:#8a93a0;      /* meta on dark */
+--neutral-500:#6b7280;      /* meta on light, 4.5:1 */
+--neutral-600:#4b5563;      /* secondary text on light, 7.0:1 */
+--neutral-700:#343944;      /* dark dividers */
+--neutral-800:#252932;      /* surface raised */
+--neutral-900:#1b1d22;      /* surface */
+--neutral-950:#101012;      /* canvas */
+--ink:#111827;              /* copy on light, 16.5:1 */
+
+/* ---- Action shades ---- */
+--be-blue-ink:#1878b4;      /* button fill, white label 4.8:1 */
+--be-blue-link:#13608f;     /* links on light, 6.3:1 */
+--be-blue-press:#0f4d73;
+--be-blue-hover:var(--be-blue-press);
+--red-on-light:#c80d0d;     /* small red text on light, 5.6:1 */
+--red-on-dark:#ff4d4d;      /* small red text on dark, 5.8:1 */
+
+/* ---- Legacy aliases (kept so existing markup does not break) ---- */
+--be-black:var(--neutral-950);
+--be-red:var(--bea-red);
+--be-blue:var(--bea-blue);
+--be-white:var(--bea-white);
+--be-cream:var(--neutral-50);
+--charcoal:var(--neutral-600);
+--soft-gray:var(--neutral-500);
+--blue-tint:#e8f4fd;
+--be-red-deep:var(--red-on-light);
+--be-red-hover:var(--red-on-light);
+--be-red-press:#a80a0a;
+
+/* ---- Semantic (dark theme, default) ---- */
+--text-strong:var(--bea-white);
+--text-body:var(--neutral-300);
+--text-secondary:var(--neutral-300);
+--text-muted:var(--neutral-400);
+--text-inverse:var(--ink);
+--text-inverse-muted:var(--neutral-600);
+--text-accent:var(--bea-red);
+--text-accent-small:var(--red-on-dark);
+--text-accent-small-blue:var(--bea-blue);
+--text-link:var(--bea-blue);
+--text-link-hover:var(--bea-electric);
+
+--surface-page:var(--neutral-950);
+--surface-card:var(--neutral-900);
+--surface-sunken:var(--neutral-900);
+--surface-raised:var(--neutral-800);
+--surface-dark:var(--neutral-950);
+--surface-dark-raised:var(--neutral-900);
+--surface-band:var(--neutral-900);
+--surface-blue-tint:var(--blue-tint);
+--surface-action:var(--be-blue-ink);
+--surface-accent:var(--bea-red);
+
+--border-subtle:var(--neutral-700);
+--border-strong:var(--neutral-600);
+--border-dark:var(--neutral-700);
+--border-accent:var(--bea-red);
+--focus-ring:var(--bea-electric);
+
+--status-success:#3fbf7f;
+--status-warning:#e8a33d;
+--status-danger:var(--red-on-dark);
+--status-info:#52b0e8;
+}
+
+/* ---- Semantic (light theme — scoped sections) ---- */
+[data-theme="light"]{
+color-scheme:light;
+--text-strong:var(--ink);
+--text-body:var(--ink);
+--text-secondary:var(--neutral-600);
+--text-muted:var(--neutral-500);
+--text-inverse:var(--bea-white);
+--text-inverse-muted:var(--neutral-300);
+--text-accent-small:var(--red-on-light);
+--text-accent-small-blue:var(--be-blue-link);
+--text-link:var(--be-blue-link);
+--text-link-hover:var(--be-blue-press);
+
+--surface-page:var(--neutral-50);
+--surface-card:var(--bea-white);
+--surface-sunken:var(--neutral-100);
+--surface-raised:var(--bea-white);
+--surface-band:var(--neutral-50);
+
+--border-subtle:var(--neutral-200);
+--border-strong:var(--ink);
+--focus-ring:var(--be-blue-link);
+
+--status-success:#1e7a4c;
+--status-warning:#a15c07;
+--status-danger:var(--red-on-light);
+--status-info:var(--be-blue-link);
+}

@@ -1,0 +1,14 @@
+:root{
+/* Depth is carried by rules and ground colour, not by shadow.
+   The only surviving shadow is a hairline lift for the one featured row. */
+--shadow-none:none;
+--shadow-sm:none;
+--shadow-card:none;
+--shadow-raised:0 1px 0 var(--border-subtle);
+--shadow-red:none;
+--shadow-inset-hairline:inset 0 0 0 1px var(--border-subtle);
+
+--scrim-bottom:linear-gradient(180deg,rgba(8,8,8,0) 0%,rgba(8,8,8,.15) 45%,rgba(8,8,8,.82) 100%); /* @kind other */
+--scrim-left:linear-gradient(90deg,rgba(8,8,8,.86) 0%,rgba(8,8,8,.45) 50%,rgba(8,8,8,0) 100%); /* @kind other */
+--scrim-flat:rgba(8,8,8,.55);
+}

@@ -1,0 +1,40 @@
+/* Site-level overrides carried over from the Claude Design prototype
+   (Better Everyday Site.dc.html, <helmet> block). Tokens live in ./tokens. */
+
+body { margin: 0; background: #101012; font-family: "Inter", "Helvetica Neue", Arial, sans-serif; color: #b9c1cb; }
+
+a { color: #1E90D4; }
+a:hover { color: #00A8F3; }
+
+/* Photo framing, tuned per image so faces and the wheelchairs stay in frame. */
+[data-pos="hero"] img { object-position: 50% 62%; height: clamp(380px, 62vw, 860px) !important; }
+[data-pos="hero"] figcaption { justify-content: center; text-align: center; }
+[data-pos="post"] img { object-position: 50% 6%; }
+[data-pos="james"] img { object-position: 12% 50%; }
+[data-pos="kite"] img { object-position: 50% 58%; }
+[data-pos="group"] img { object-position: 50% 28%; }
+
+.be-shell { display: grid; grid-template-columns: var(--rail-width) minmax(0, 1fr); align-items: start; }
+.be-rail { z-index: 5; min-height: 100vh; box-sizing: border-box; background: #101012; }
+.be-rail a { box-sizing: border-box; }
+
+@media (max-width: 900px) {
+  .be-shell { grid-template-columns: 1fr !important; --rail-width: 0px; }
+  .be-rail { position: static !important; height: auto !important; min-height: 0; border-right: 0 !important; border-bottom: 1px solid #4b5563; flex-direction: row !important; align-items: center; flex-wrap: wrap; }
+  .be-rail-nav { flex-direction: row !important; flex-wrap: wrap; gap: 16px; border-top: 0 !important; }
+  .be-rail-nav a { border-bottom: 0 !important; }
+  .be-rail-foot { margin-top: 0 !important; margin-left: auto; flex-direction: row !important; align-items: center; gap: 16px; }
+  .be-rail-foot small { display: none; }
+}
+
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* Phone layouts. The prototype's 12-column and 3–4 column rows were never adapted for
+   narrow screens; these stack them so nothing overflows or crushes to one word per line. */
+@media (max-width: 700px) {
+  .be-stack-sm > * { grid-column: 1 / -1 !important; }
+  .be-program-row { grid-template-columns: auto minmax(0, 1fr) !important; }
+  .be-program-row > :nth-child(n+3) { grid-column: 2 !important; }
+  .be-rail-foot { margin-left: 0; width: 100%; flex-wrap: wrap; }
+  .be-rail-foot > a:first-child { width: auto !important; }
+}
