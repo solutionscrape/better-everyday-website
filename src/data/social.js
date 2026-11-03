@@ -22,8 +22,7 @@ export const PUBLICATIONS = [
   },
   {
     outlet: 'YouTube',
-    // TODO: replace with the video's real title (not readable from the build environment).
-    title: 'Watch James Anderson, CSCS',
+    title: 'Fitness Fun at FRIENDS of Broomfield',
     kind: 'Video',
     href: 'https://youtu.be/cS0J61IcJxU',
     cta: 'Watch on YouTube',
