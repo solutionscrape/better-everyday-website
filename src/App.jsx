@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { SiteFooter, SiteRail } from './ds';
 import CartDrawer from './components/CartDrawer.jsx';
 import { CONTACT, IMG, NAV } from './data/site.js';
+import { SOCIALS } from './data/social.js';
 import { useHashRoute } from './lib/router.js';
 import { useCart } from './lib/cart.jsx';
 import Home from './pages/Home.jsx';
@@ -61,7 +62,7 @@ export default function App() {
   return (
     <>
       <div className="be-shell">
-        <SiteRail logoSrc={IMG.mark} items={NAV} active={active} ctaLabel="Book a conversation" ctaHref="#contact" phone={CONTACT.phone} email={CONTACT.email} />
+        <SiteRail logoSrc={IMG.mark} items={NAV} active={active} ctaLabel="Book a conversation" ctaHref="#contact" phone={CONTACT.phone} email={CONTACT.email} socials={SOCIALS} />
         <main style={{ minWidth: 0 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap', padding: '9px var(--gutter)', borderBottom: '1px solid #4b5563', fontFamily: "'Inter',sans-serif", fontSize: '11px', letterSpacing: '.15em', textTransform: 'uppercase', color: '#8a93a0' }}>
             <span>Progress, not perfection</span>
@@ -72,7 +73,7 @@ export default function App() {
             </button>
           </div>
           <SitePage route={route} />
-          <SiteFooter />
+          <SiteFooter socials={SOCIALS} />
         </main>
       </div>
       <CartDrawer />

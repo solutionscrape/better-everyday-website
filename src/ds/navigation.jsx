@@ -36,7 +36,25 @@ function RailLink({ item, active }) {
 }
 
 /** Sticky left rail: logo, primary nav, CTA and contact details. Collapses to a top bar under 900px (see global.css). */
-export function SiteRail({ items, active, logoSrc, homeHref = '#home', ctaLabel = 'Book a conversation', ctaHref = '#contact', phone, email, service = 'Boulder & Broomfield County', style }) {
+const socialLink = { fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '.8125rem', letterSpacing: 'var(--tracking-button)', textTransform: 'uppercase', color: 'var(--text-muted)', textDecoration: 'none', boxShadow: 'none' };
+
+/** Row of outbound social profile links. Text only: the design system has no icon set. */
+export function SocialLinks({ items = [], style }) {
+  if (!items.length) return null;
+  return (
+    <ul aria-label="Social media" style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexWrap: 'wrap', gap: '4px 16px', ...style }}>
+      {items.map((s) => (
+        <li key={s.label}>
+          <a href={s.href} target="_blank" rel="noopener noreferrer" style={{ ...socialLink, display: 'inline-flex', alignItems: 'center', minHeight: '32px' }}>
+            {s.label}<span className="visually-hidden"> (opens in a new tab)</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export function SiteRail({ items, active, logoSrc, homeHref = '#home', ctaLabel = 'Book a conversation', ctaHref = '#contact', phone, email, socials = [], service = 'Boulder & Broomfield County', style }) {
   return (
     <aside
       className="be-rail"
@@ -77,18 +95,20 @@ export function SiteRail({ items, active, logoSrc, homeHref = '#home', ctaLabel 
             {email}
           </a>
         ) : null}
+        <SocialLinks items={socials} />
       </div>
     </aside>
   );
 }
 
-export function SiteFooter({ areas = 'Arvada · Boulder · Broomfield · Westminster · Lafayette · Louisville', tagline = 'Progress, not perfection', owner = '© 2026 Better Everyday Athletics', style }) {
+export function SiteFooter({ areas = 'Arvada · Boulder · Broomfield · Westminster · Lafayette · Louisville', tagline = 'Progress, not perfection', owner = '© 2026 Better Everyday Athletics', socials = [], style }) {
   const cell = { fontFamily: 'var(--font-body)', fontSize: 'var(--text-caption-size)', letterSpacing: 'var(--tracking-caption)', textTransform: 'uppercase', color: 'var(--text-muted)' };
   return (
     <footer style={{ borderTop: '1px solid var(--border-subtle)', padding: 'var(--space-5) var(--gutter) var(--space-7)', display: 'flex', justifyContent: 'space-between', gap: 'var(--space-4)', flexWrap: 'wrap', ...style }}>
       <span style={cell}>{owner}</span>
       <span style={cell}>{areas}</span>
       <span style={cell}>{tagline}</span>
+      {socials.length ? <SocialLinks items={socials} style={{ flexBasis: '100%' }} /> : null}
     </footer>
   );
 }
