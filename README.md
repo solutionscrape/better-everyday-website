@@ -11,7 +11,7 @@ Claude Design prototype `Better Everyday Site.dc.html` and the Better Everyday d
 | `#services` | Work With James: session packages (`#memberships` scrolls to them), coach headshot, FAQ |
 | `#contact` | Contact form (Netlify Forms), email, phone, service area, community photo |
 | `#blog`, `#blog/<slug>` | Blog index and all 11 migrated posts |
-| `#store`, `#store/<id>` | Store with Publications / Swag / Packages filter; product pages with size picker |
+| `#store`, `#store/<id>` | Store (book and swag only) with Publications / Swag filter; product pages with size picker. Session packages are sold on Home and Work With James. |
 | `#portal`, `#portal/<tab>` | Client portal sign-in and dashboard (**sample data only**, see below) |
 
 ## Develop

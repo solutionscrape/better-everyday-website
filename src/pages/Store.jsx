@@ -1,23 +1,23 @@
 import { useState } from 'react';
 import { Button, Field, Lede, ProductRow, SectionHeading } from '../ds';
 import { LinkButton, Toggle, metaLabel, h2Style } from '../components/ui.jsx';
-import { BOOK_AMAZON_URL, PACKAGES, PRODUCTS, packageLine } from '../data/catalog.js';
+import { BOOK_AMAZON_URL, PRODUCTS } from '../data/catalog.js';
 import { IMG, usd } from '../data/site.js';
 import { useCart } from '../lib/cart.jsx';
 
 export const STORE_PRODUCTS = PRODUCTS.map((p) => ({ ...p, image: IMG[p.img], href: '#store/' + p.id, priceLabel: p.price ? usd(p.price) : 'Free' }));
-const CATS = ['All', 'Publications', 'Swag', 'Packages'];
+// Coaching packages are sold on Work With James and Home, not in the store.
+const CATS = ['All', 'Publications', 'Swag'];
 const grid = { display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(min(240px,100%),1fr))', gap: '40px 32px', paddingTop: '32px' };
 
 export function StoreIndex() {
-  const cart = useCart();
   const [cat, setCat] = useState('All');
   const show = (c) => cat === 'All' || cat === c;
   const apparel = STORE_PRODUCTS.filter((p) => p.img !== 'book');
 
   return (
     <>
-      <Lede kicker="Store" title="Books, Gear and" accent="Sessions" deck="Everything here supports the same idea: get a little better every day. Payment is completed securely through HubSpot." />
+      <Lede kicker="Store" title="Books and" accent="Gear" deck="Everything here supports the same idea: get a little better every day. Payment is completed securely through HubSpot." />
       <section style={{ padding: '0 var(--gutter) var(--section-y)', display: 'grid', gap: 'clamp(48px,6vw,96px)' }}>
         <div role="group" aria-label="Filter the store" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', borderTop: '1px solid var(--border-strong)', paddingTop: '20px' }}>
           {CATS.map((c) => <Toggle key={c} active={cat === c} onClick={() => setCat(c)}>{c}</Toggle>)}
@@ -42,26 +42,8 @@ export function StoreIndex() {
           </div>
         ) : null}
 
-        {show('Packages') ? (
-          <div>
-            <SectionHeading number="03" title="Session Packages" note="In-person 1:1 coaching with James. One-time purchases with no auto-renewal. Book sessions when they work for you." />
-            <div style={{ marginTop: '32px', borderTop: '1px solid var(--border-strong)' }}>
-              {PACKAGES.map((p) => {
-                const inCart = cart.has(p.id);
-                return (
-                  <div key={p.id} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(130px,100%),1fr))', gap: '8px 24px', alignItems: 'center', padding: '14px 0', borderBottom: '1px solid var(--border-subtle)' }}>
-                    <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.02em', color: 'var(--text-strong)' }}>{p.title}</span>
-                    <span style={{ color: 'var(--text-body)' }}>{p.sessions} {p.sessions === 1 ? 'session' : 'sessions'} · ${p.perSession} per session</span>
-                    <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.25rem', color: 'var(--text-strong)' }}>{usd(p.price)}</span>
-                    <LinkButton onClick={() => cart.add(packageLine(p))} aria-label={'Add ' + p.title + ' to cart'} style={{ justifySelf: 'start' }}>{inCart ? 'Added ✓' : 'Add to cart'}</LinkButton>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        ) : null}
       </section>
-      <Field tone="black" kicker="Session packages" title="Not Sure Which Package Fits?" body="Tell James who the coaching is for and he will recommend a starting point before you buy." action={{ label: 'Ask James', href: '#contact' }} />
+      <Field tone="black" kicker="Work with James" title="Looking for Coaching?" body="Session packages for 1:1 coaching with James are on the Work With James page." action={{ label: 'See session packages', href: '#memberships' }} />
     </>
   );
 }
