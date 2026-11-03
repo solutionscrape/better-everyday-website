@@ -8,7 +8,7 @@ export const SOCIALS = [
 
 /**
  * Publications by and about James, newest or most important first.
- * kind: 'Book' | 'Articles' | 'Feature' | 'Interview' | 'Podcast'
+ * kind: 'Book' | 'Video' | 'Articles' | 'Feature' | 'Interview' | 'Podcast'
  * TODO: add the Voyage Denver and Broomfield Lifestyle features once their URLs are confirmed
  * (both appear under "As featured in" on mybettereveryday.org).
  */
@@ -19,6 +19,14 @@ export const PUBLICATIONS = [
     kind: 'Book',
     href: BOOK_AMAZON_URL,
     cta: 'Buy on Amazon',
+  },
+  {
+    outlet: 'YouTube',
+    // TODO: replace with the video's real title (not readable from the build environment).
+    title: 'Watch James Anderson, CSCS',
+    kind: 'Video',
+    href: 'https://youtu.be/cS0J61IcJxU',
+    cta: 'Watch on YouTube',
   },
   {
     outlet: 'Medium',
