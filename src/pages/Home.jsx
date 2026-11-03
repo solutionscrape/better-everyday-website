@@ -1,8 +1,67 @@
-import { Eyebrow, Field, Lede, Plate, ProgramRow, Quote, SectionHeading, Split, StatRow, TextLink } from '../ds';
-import { IMG } from '../data/site.js';
+import { Button, Eyebrow, Field, Lede, Plate, ProgramRow, Quote, SectionHeading, Split, StatRow, TextLink } from '../ds';
+import { LinkButton, metaLabel } from '../components/ui.jsx';
+import { PACKAGES, packageLine } from '../data/catalog.js';
+import { IMG, usd } from '../data/site.js';
+import { useCart } from '../lib/cart.jsx';
 
 const bodyP = { margin: 0, fontSize: '1.03125rem', lineHeight: 1.7, color: 'var(--text-body)', textWrap: 'pretty' };
 const h2 = { margin: 0, fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'var(--text-h2-size)', lineHeight: 'var(--text-h2-lh)', letterSpacing: 'var(--tracking-heading)', textTransform: 'uppercase', color: 'var(--text-strong)' };
+
+const MAIN = PACKAGES.filter((p) => !p.small);
+const SMALL = PACKAGES.filter((p) => p.small);
+const LOWEST = Math.min(...PACKAGES.map((p) => p.perSession));
+
+/**
+ * Compact package picker. Prices come from the same catalog as the Store and
+ * Work With James, so they always match. Three cards, one highlighted, and the
+ * two smaller options as a single quiet line, so the choice stays simple.
+ */
+function HomePackages() {
+  const cart = useCart();
+  const add = (p) => () => { cart.add(packageLine(p)); cart.openCart(); };
+  return (
+    <div id="packages" style={{ paddingTop: 'clamp(32px,4vw,56px)', display: 'grid', gap: '20px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: '16px', flexWrap: 'wrap' }}>
+        <span style={metaLabel}>Session packages · one-time purchase, no auto-renewal</span>
+        <TextLink href="#memberships">Compare packages</TextLink>
+      </div>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(240px,100%),1fr))', gap: '16px' }}>
+        {MAIN.map((p) => (
+          <div
+            key={p.id}
+            style={{
+              display: 'grid', gap: '10px', alignContent: 'start', padding: '20px',
+              borderTop: '1px solid var(--border-strong)',
+              ...(p.featured ? { background: 'var(--surface-card)', borderLeft: '3px solid #FC1111' } : null),
+            }}
+          >
+            <span style={{ ...metaLabel, color: p.featured ? '#FF4D4D' : '#8a93a0', minHeight: '13px' }}>{p.featured ? p.badge : '\u00a0'}</span>
+            <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.125rem', textTransform: 'uppercase', color: 'var(--text-strong)', lineHeight: 1.15 }}>{p.title}</span>
+            <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(1.6rem,2.4vw,2rem)', letterSpacing: '-.02em', color: 'var(--text-strong)', lineHeight: 1 }}>{usd(p.price)}</span>
+            <span style={{ fontSize: '.875rem', color: 'var(--text-body)' }}>{p.sessions} sessions · ${p.perSession} per session</span>
+            {p.featured ? (
+              <Button onClick={add(p)} style={{ justifySelf: 'start', marginTop: '6px' }} aria-label={'Add ' + p.title + ' to cart'}>Add to cart</Button>
+            ) : (
+              <LinkButton onClick={add(p)} style={{ justifySelf: 'start' }} aria-label={'Add ' + p.title + ' to cart'}>Add to cart</LinkButton>
+            )}
+          </div>
+        ))}
+      </div>
+      <p style={{ margin: 0, fontSize: '.9375rem', lineHeight: 1.7, color: 'var(--text-body)' }}>
+        Just want to try it?{' '}
+        {SMALL.map((p, i) => (
+          <span key={p.id}>
+            {i > 0 ? ' or ' : ''}
+            <LinkButton onClick={add(p)} style={{ minHeight: 0, fontSize: '.8125rem' }} aria-label={'Add ' + p.title + ' to cart'}>
+              {p.title} · {usd(p.price)}
+            </LinkButton>
+          </span>
+        ))}
+        .
+      </p>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
@@ -37,9 +96,9 @@ export default function Home() {
           featured
           title="1:1 Personalized Coaching"
           description="In-person sessions where James coaches form, adjusts in real time and keeps each workout within reach."
-          price="$90"
-          priceNote={<span>per session<br />10-session package</span>}
-          action={{ label: 'See packages', href: '#memberships' }}
+          price={'From $' + LOWEST}
+          priceNote={<span>per session<br />with a 20-session package</span>}
+          action={{ label: 'See packages', href: '#packages' }}
         />
         <ProgramRow
           number="02"
@@ -57,6 +116,7 @@ export default function Home() {
           priceNote="Self-directed"
           action={{ label: 'Details', href: '#services' }}
         />
+        <HomePackages />
       </section>
       <Split data-pos="james" image={IMG.james} imageAlt="James Anderson on a field at sunset with a young player">
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', maxWidth: '46ch' }}>

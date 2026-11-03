@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
 // Hash routes, matching the prototype: #home, #services (alias #memberships),
-// #contact, #blog[/slug], #store[/id], #portal[/tab]. #book scrolls to the book band on Home.
+// #contact, #blog[/slug], #store[/id], #portal[/tab]. #book and #packages scroll to sections on Home.
 const PAGES = { services: 'services', memberships: 'services', contact: 'contact', blog: 'blog', store: 'store', portal: 'portal' };
-const ANCHORS = new Set(['#book', '#memberships']);
+const ANCHORS = new Set(['#book', '#packages', '#memberships']);
 
 export function parseHash(hash) {
   const [base, sub] = hash.replace(/^#/, '').split('/');
