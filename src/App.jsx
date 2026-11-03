@@ -53,7 +53,7 @@ export default function App() {
   }, [route]);
 
   if (route.page === 'portal') {
-    return portal.authed ? <Dashboard portal={portal} sub={route.sub} /> : <Login portal={portal} />;
+    return portal.user ? <Dashboard portal={portal} sub={route.sub} /> : <Login portal={portal} />;
   }
 
   const active = NAV.find((n) => n.page === route.page)?.label || 'Home';

@@ -62,6 +62,12 @@ site redirects there automatically.
 
 ## Known gaps
 
-- **Client portal** is a front-end prototype. Sign-in accepts any valid email and 6+ character password, all data is sample content and nothing is saved. A real version needs accounts (e.g. Supabase auth), a database, and package/billing status from HubSpot. Download links are placeholders until the PDFs exist.
+- **Client portal** is a front-end prototype with four demo logins (password `demo1234` for all; listed on the sign-in page):
+  - `jordan@example.com`: Jordan Morgan, youth client, Build Momentum (10 sessions)
+  - `alex@example.com`: Alex Morgan, Jordan's parent, sees Jordan's account
+  - `margaret@example.com`: Margaret Ellis, senior balance training, Long-Term Commitment (20 sessions, paid in full)
+  - `sam@example.com`: Sam Rivera, virtual client, Get Started (5 sessions)
+
+  Credentials are checked in the browser and the passwords ship with the site, so they are not secure. All data is sample content (`src/pages/portal/data.js`) and changes reset on reload. A real version needs accounts (e.g. Supabase auth), a database, and package/billing status from HubSpot. Download links are placeholders until the PDFs exist.
 - **Blog photos** still load from Squarespace. Run `npm run fetch-blog-images` (with internet access) to copy them into `public/img/blog/` and repoint the posts, **before** the Squarespace site is closed.
 - **Hoodie sizes** reuse the tee's XS–5XL run; please confirm with James.

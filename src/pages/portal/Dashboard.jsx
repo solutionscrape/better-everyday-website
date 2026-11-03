@@ -2,24 +2,32 @@ import { useState } from 'react';
 import { Button, ProgramRow, SelectField, SiteFooter, SiteRail, TextArea, TextField } from '../../ds';
 import { LinkButton, Meta, SlotButton, StatusNote, Toggle, bodyText, displayStrong, h3Style, rowGrid } from '../../components/ui.jsx';
 import { CONTACT, IMG, isEmail } from '../../data/site.js';
-import { DOWNLOADS, PACKAGE, PLAN, SLOTS, TABS, sortSessions, splitSlot } from './data.js';
+import { PACKAGES } from '../../data/catalog.js';
+import { CLIENTS, DOWNLOADS, SLOTS, TABS, sortSessions, splitSlot } from './data.js';
 
 const cardTitle = { fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.5rem', lineHeight: 1.15, textTransform: 'uppercase', color: 'var(--text-strong)' };
 const card = { display: 'grid', gap: '10px', alignContent: 'start', padding: '24px 24px 28px 0', borderBottom: '1px solid var(--border-subtle)' };
 const twoCol = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(320px,100%),1fr))', gap: 'clamp(32px,5vw,72px)', alignItems: 'start' };
 const panel = { display: 'grid', gap: '20px', borderTop: '1px solid var(--border-strong)', paddingTop: '24px' };
 
-function useCredits(data) {
-  const left = PACKAGE.total - PACKAGE.completed;
+/** Package details for a client: catalog entry merged with what they've used and paid. */
+function packageFor(client) {
+  const pkg = PACKAGES.find((p) => p.id === client.package.id);
+  return { ...pkg, ...client.package, total: pkg.sessions, short: pkg.title.split(' — ')[0] };
+}
+
+function useCredits(data, client) {
+  const left = packageFor(client).total - client.package.completed;
   const booked = data.sessions.length;
   return { left, booked, unbooked: Math.max(0, left - booked) };
 }
 
-function Overview({ data }) {
+function Overview({ data, client }) {
   const next = sortSessions(data.sessions)[0];
-  const done = PLAN.filter((x) => data.planDone[x.id]).length;
-  const last = data.msgs[data.msgs.length - 1];
-  const { left } = useCredits(data);
+  const done = client.plan.filter((x) => data.planDone[x.id]).length;
+  const last = [...data.msgs].reverse().find((m) => m.from === 'James');
+  const { left } = useCredits(data, client);
+  const pkg = packageFor(client);
   const Card = ({ label, title, body, href, cta }) => (
     <div style={card}>
       <Meta>{label}</Meta>
@@ -31,23 +39,23 @@ function Overview({ data }) {
   return (
     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(260px,100%),1fr))', borderTop: '1px solid var(--border-strong)' }}>
       <Card label="Next session" title={next ? next.date : 'Nothing booked'} body={next ? next.time + ' · ' + next.place : 'Book your next session with James.'} href="#portal/schedule" cta="Manage schedule" />
-      <Card label="This week’s plan" title={`${done} of ${PLAN.length} done`} body="Keep going. Small steps count." href="#portal/plan" cta="Open plan" />
-      <Card label="Latest from James" title={last.time} body={last.text} href="#portal/messages" cta="Reply" />
-      <Card label="Package" title={`${PACKAGE.short} · ${left} left`} body={'Next installment ' + PACKAGE.nextInstallment.date} href="#portal/package" cta="Billing" />
+      <Card label="This week’s plan" title={`${done} of ${client.plan.length} done`} body="Keep going. Small steps count." href="#portal/plan" cta="Open plan" />
+      <Card label="Latest from James" title={last ? last.time : 'No messages yet'} body={last ? last.text : 'Send James a note any time.'} href="#portal/messages" cta={last ? 'Reply' : 'Message James'} />
+      <Card label="Package" title={`${pkg.short} · ${left} left`} body={pkg.nextInstallment ? 'Next installment ' + pkg.nextInstallment.date : pkg.plan} href="#portal/package" cta="Billing" />
     </div>
   );
 }
 
-function Schedule({ data, update }) {
+function Schedule({ data, update, client }) {
   const [booking, setBooking] = useState(false);
   const [resched, setResched] = useState(null);
   const [note, setNote] = useState('');
-  const { unbooked } = useCredits(data);
+  const { unbooked } = useCredits(data, client);
   const taken = new Set(data.sessions.map((x) => x.date + ' · ' + x.time));
   const free = SLOTS.filter((x) => !taken.has(x));
 
   const book = (sl) => {
-    update((d) => ({ sessions: [...d.sessions, { id: Date.now(), ...splitSlot(sl), type: '1:1 Strength', place: 'Broomfield field' }] }));
+    update((d) => ({ sessions: [...d.sessions, { id: Date.now(), ...splitSlot(sl), type: client.sessionType, place: client.place }] }));
     setBooking(false);
     setNote('Booked ' + sl + '. James will confirm by message.');
   };
@@ -95,13 +103,13 @@ function Schedule({ data, update }) {
   );
 }
 
-function Plan({ data, update }) {
-  const done = PLAN.filter((x) => data.planDone[x.id]).length;
+function Plan({ data, update, client }) {
+  const done = client.plan.filter((x) => data.planDone[x.id]).length;
   return (
     <div style={{ display: 'grid', gap: '12px' }}>
-      <p style={bodyText}>Week of October 12 · {done} of {PLAN.length} done. James updates your plan after each session.</p>
+      <p style={bodyText}>{client.week} · {done} of {client.plan.length} done. James updates your plan after each session.</p>
       <div style={{ borderTop: '1px solid var(--border-strong)' }}>
-        {PLAN.map((x) => {
+        {client.plan.map((x) => {
           const on = !!data.planDone[x.id];
           return (
             <div key={x.id} style={rowGrid}>
@@ -189,31 +197,32 @@ function Messages({ data, update, me }) {
   );
 }
 
-function PackageTab({ data }) {
-  const { left, booked } = useCredits(data);
-  const n = PACKAGE.nextInstallment;
+function PackageTab({ data, client }) {
+  const { left, booked } = useCredits(data, client);
+  const pkg = packageFor(client);
+  const n = pkg.nextInstallment;
   return (
     <div style={{ display: 'grid', gap: '40px' }}>
       <div style={{ borderTop: '1px solid var(--border-strong)' }}>
         <ProgramRow
-          number="02"
+          number={pkg.number}
           featured
-          title={PACKAGE.title}
-          description={`${left} of ${PACKAGE.total} sessions left, ${booked} already booked. A one-time package with no auto-renewal.`}
-          price="$900"
-          priceNote={PACKAGE.plan}
+          title={pkg.title}
+          description={`${left} of ${pkg.total} sessions left, ${booked} already booked. A one-time package with no auto-renewal.`}
+          price={'$' + pkg.price.toLocaleString('en-US')}
+          priceNote={pkg.plan}
           action={{ label: 'Buy more sessions', href: '#services' }}
         />
       </div>
       <div>
         <h2 style={h3Style}>Billing</h2>
         <div style={rowGrid}>
-          <Meta>Next installment</Meta>
-          <span style={{ color: 'var(--text-strong)' }}>{n.date} · {n.amount}</span>
-          <span style={{ color: 'var(--text-body)' }}>{n.label} · managed in HubSpot</span>
+          <Meta>{n ? 'Next installment' : 'Balance'}</Meta>
+          <span style={{ color: 'var(--text-strong)' }}>{n ? n.date + ' · ' + n.amount : 'Nothing due'}</span>
+          <span style={{ color: 'var(--text-body)' }}>{n ? n.label : pkg.plan} · managed in HubSpot</span>
           <LinkButton href={'mailto:' + CONTACT.email + '?subject=Billing%20question'}>Billing question →</LinkButton>
         </div>
-        {PACKAGE.invoices.map((i) => (
+        {pkg.invoices.map((i) => (
           <div key={i.date} style={rowGrid}>
             <Meta>{i.date}</Meta>
             <span style={{ color: 'var(--text-strong)' }}>{i.desc}</span>
@@ -228,7 +237,7 @@ function PackageTab({ data }) {
 
 const ACCESS = ['Full access', 'Schedule and messages', 'View only'];
 
-function Family({ data, update }) {
+function Family({ data, update, client, user }) {
   const [inv, setInv] = useState({ email: '', access: 'Schedule and messages' });
   const [err, setErr] = useState();
   const [note, setNote] = useState('');
@@ -241,6 +250,7 @@ function Family({ data, update }) {
   return (
     <div style={twoCol}>
       <div style={{ borderTop: '1px solid var(--border-strong)' }}>
+        {data.people.length === 0 ? <p style={{ ...bodyText, padding: '18px 0' }}>No one else has access yet.</p> : null}
         {data.people.map((o) => (
           <div key={o.name} style={{ display: 'grid', gap: '4px', padding: '18px 0', borderBottom: '1px solid var(--border-subtle)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap' }}>
@@ -253,7 +263,7 @@ function Family({ data, update }) {
       </div>
       <div style={panel}>
         <h2 style={h3Style}>Invite someone</h2>
-        <p style={bodyText}>Give a parent, caregiver or support staff member access to Jordan’s schedule, plan and messages.</p>
+        <p style={bodyText}>Give a parent, caregiver or support staff member access to {user.caregiver ? client.first + '’s' : 'your'} schedule, plan and messages.</p>
         <TextField id="inv-email" label="Their email" type="email" value={inv.email} error={err} onChange={(e) => { const v = e.target.value; setInv((x) => ({ ...x, email: v })); setErr(undefined); }} />
         <SelectField id="inv-access" label="Access" options={ACCESS} value={inv.access} onChange={(e) => { const v = e.target.value; setInv((x) => ({ ...x, access: v })); }} />
         <div style={{ display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'wrap' }}>
@@ -283,11 +293,12 @@ function Downloads() {
 export default function Dashboard({ portal, sub }) {
   const tabKey = sub === 'membership' ? 'package' : TABS[sub] ? sub : 'overview';
   const tab = TABS[tabKey];
-  const caregiver = portal.role === 'Caregiver';
-  const me = caregiver ? 'Alex (parent)' : 'Jordan';
-  const title = tab.title || 'Welcome Back, ' + (caregiver ? 'Alex' : 'Jordan');
-  const props = { data: portal.data, update: portal.update, me };
-  const signOut = () => { portal.setAuthed(false); window.location.hash = '#portal'; };
+  const user = portal.user;
+  const client = CLIENTS[user.client];
+  const caregiver = !!user.caregiver;
+  const title = tab.title || 'Welcome Back, ' + user.first;
+  const props = { data: portal.data[user.client], update: (fn) => portal.update(user.client, fn), me: user.me, client, user };
+  const signOut = () => { portal.setUser(null); window.location.hash = '#portal'; };
   const Body = { overview: Overview, schedule: Schedule, plan: Plan, progress: Progress, messages: Messages, package: PackageTab, family: Family, downloads: Downloads }[tabKey];
 
   return (
@@ -304,8 +315,8 @@ export default function Dashboard({ portal, sub }) {
       />
       <main style={{ minWidth: 0 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px', flexWrap: 'wrap', padding: '0 var(--gutter)', minHeight: '44px', borderBottom: '1px solid #4b5563', fontSize: '11px', letterSpacing: '.15em', textTransform: 'uppercase', color: '#8a93a0' }}>
-          <span>Signed in as {caregiver ? 'Alex Morgan' : 'Jordan Morgan'} · {caregiver ? 'Parent / caregiver' : 'Client'}</span>
-          {caregiver ? <span style={{ color: 'var(--text-strong)' }}>Viewing Jordan Morgan’s account</span> : null}
+          <span>Signed in as {user.name} · {user.roleLabel}</span>
+          {caregiver ? <span style={{ color: 'var(--text-strong)' }}>Viewing {client.name}’s account</span> : null}
           <div style={{ display: 'flex', gap: '20px' }}>
             <a href="#home" style={{ color: '#8a93a0', textDecoration: 'none', boxShadow: 'none', minHeight: '44px', display: 'flex', alignItems: 'center' }}>Website</a>
             <button type="button" onClick={signOut} style={{ background: 'none', border: 0, cursor: 'pointer', minHeight: '44px', font: 'inherit', letterSpacing: 'inherit', textTransform: 'inherit', color: '#1E90D4' }}>Sign out</button>
