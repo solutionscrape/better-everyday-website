@@ -9,12 +9,12 @@ import { submitNetlifyForm } from '../lib/netlify-forms.js';
 const bodyP = { margin: 0, fontSize: '1.03125rem', lineHeight: 1.7, color: 'var(--text-body)', textWrap: 'pretty' };
 const twoUp = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(220px,100%),1fr))', gap: '24px' };
 const TOPIC_OPTIONS = [...TOPICS.map((t) => t.title), 'A custom topic', 'Not sure yet'];
-const EMPTY = { name: '', email: '', organization: '', phone: '', date: '', setting: SETTING_OPTIONS[0], format: FORMAT_OPTIONS[0], audience: AUDIENCE_OPTIONS[1], topic: TOPIC_OPTIONS[0], message: '' };
+const EMPTY = { name: '', email: '', organization: '', phone: '', date: '', location: '', setting: SETTING_OPTIONS[0], format: FORMAT_OPTIONS[0], audience: AUDIENCE_OPTIONS[1], topic: TOPIC_OPTIONS[0], message: '' };
 
 function Topics() {
   return (
     <section id="speaking-topics" style={{ padding: 'var(--section-y) var(--gutter)' }}>
-      <SectionHeading number="Sect. 01" title="Speaking topics" note="Every talk is shaped around the audience in the room. These are where most conversations start." />
+      <SectionHeading number="Sect. 01" title="Speaking topics" note="Keynotes and sessions for conferences, organizations and teams nationwide. Every talk is shaped around the audience in the room." />
       <div>
         {TOPICS.map((t, i) => (
           <div key={t.title} className="be-program-row" style={{ display: 'grid', gridTemplateColumns: 'auto minmax(0,1.3fr) minmax(0,.7fr)', gap: 'clamp(14px,2.4vw,38px)', alignItems: 'baseline', padding: 'clamp(22px,3vw,38px) 0', borderBottom: '1px solid var(--border-subtle)' }}>
@@ -45,7 +45,7 @@ function Formats() {
         </div>
         <div style={{ display: 'grid', gap: '16px', alignContent: 'start' }}>
           <h3 style={h3Style}>Where and how</h3>
-          <p style={bodyP}>In person across Colorado, and virtual anywhere.</p>
+          <p style={bodyP}>Based in Colorado and available for events across the United States, in person or virtual.</p>
           <p style={bodyP}>Talks are plainspoken and practical, and they get people moving when the room allows. James plans accessibility needs with you ahead of time so everyone can take part.</p>
           <TextLink href="https://youtu.be/cS0J61IcJxU" target="_blank" rel="noopener noreferrer">
             Watch James coach at FRIENDS of Broomfield<span className="visually-hidden"> (opens in a new tab)</span>
@@ -140,14 +140,17 @@ function RequestForm() {
             </div>
             <div style={twoUp}>
               <TextField id="sp-date" label="Event date or timeframe" hint="For example: March 12, or spring 2027" {...ctrl('date')} />
+              <TextField id="sp-location" label="Event location" hint="City and state, or virtual" {...ctrl('location')} />
+            </div>
+            <div style={twoUp}>
               <SelectField id="sp-setting" label="Setting" options={SETTING_OPTIONS} {...ctrl('setting')} />
+              <SelectField id="sp-audience" label="Audience size" options={AUDIENCE_OPTIONS} {...ctrl('audience')} />
             </div>
             <div style={twoUp}>
               <SelectField id="sp-format" label="Format" options={FORMAT_OPTIONS} {...ctrl('format')} />
-              <SelectField id="sp-audience" label="Audience size" options={AUDIENCE_OPTIONS} {...ctrl('audience')} />
+              <SelectField id="sp-topic" label="Topic" options={TOPIC_OPTIONS} {...ctrl('topic')} />
             </div>
-            <SelectField id="sp-topic" label="Topic" options={TOPIC_OPTIONS} {...ctrl('topic')} />
-            <TextArea id="sp-message" label="About the event" required rows={5} hint="Who will be in the room, what you hope they take away, and anything about accessibility or budget." {...ctrl('message')} />
+            <TextArea id="sp-message" label="About the event" required rows={5} hint="Who will be in the audience, the event theme, what you hope attendees take away, and any budget, travel or accessibility details." {...ctrl('message')} />
             <div style={{ display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
               <Button type="submit" size="lg" disabled={status === 'sending'}>{status === 'sending' ? 'Sending…' : 'Send request'}</Button>
               <span style={{ fontSize: '.8125rem', color: '#8a93a0' }}><span style={{ color: '#FF4D4D' }}>*</span> Required</span>
@@ -181,10 +184,10 @@ export default function Speaking() {
   return (
     <>
       <Lede
-        kicker="About & speaking · James Anderson, CSCS"
+        kicker="Speaking · Available nationwide"
         title="Movement Is for"
         accent="Everyone"
-        deck="James speaks to schools, parent groups, care providers and organizations about inclusive fitness, family health and building habits that last. Practical, warm and grounded in years of coaching people of all abilities."
+        deck="James speaks at conferences, associations, companies and organizations across the country about inclusive fitness, healthier generations and building habits that last. Practical, warm and grounded in years of coaching people of all abilities."
         primary={{ label: 'Invite James to speak', href: '#speaking/request' }}
         secondary={{ label: 'Meet James', href: '#speaking/about' }}
       />

@@ -18,7 +18,7 @@ import { usePortalState } from './pages/portal/data.js';
 const TITLES = {
   home: 'Adaptive Coaching with James Anderson, CSCS',
   services: 'Work With James · Session Packages',
-  speaking: 'About James & Speaking',
+  speaking: 'Speaking · James Anderson, CSCS',
   contact: 'Contact',
   blog: 'Blog',
   store: 'Store',
