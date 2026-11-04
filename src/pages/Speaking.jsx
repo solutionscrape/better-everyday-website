@@ -3,18 +3,35 @@ import { Button, Eyebrow, Lede, Quote, SectionHeading, SelectField, Split, StatR
 import Publications from '../components/Publications.jsx';
 import { Bullet, LinkButton, h2Style, h3Style, metaLabel } from '../components/ui.jsx';
 import { CONTACT, IMG, isEmail } from '../data/site.js';
-import { AUDIENCE_OPTIONS, FORMATS, FORMAT_OPTIONS, SETTING_OPTIONS, SPEAKING_FACTS, TOPICS } from '../data/speaking.js';
+import { AUDIENCES, AUDIENCE_OPTIONS, FORMATS, FORMAT_OPTIONS, ORG_OPTIONS, SETTING_OPTIONS, SPEAKING_FACTS, TOPICS } from '../data/speaking.js';
 import { submitNetlifyForm } from '../lib/netlify-forms.js';
 
 const bodyP = { margin: 0, fontSize: '1.03125rem', lineHeight: 1.7, color: 'var(--text-body)', textWrap: 'pretty' };
 const twoUp = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(220px,100%),1fr))', gap: '24px' };
 const TOPIC_OPTIONS = [...TOPICS.map((t) => t.title), 'A custom topic', 'Not sure yet'];
-const EMPTY = { name: '', email: '', organization: '', phone: '', date: '', location: '', setting: SETTING_OPTIONS[0], format: FORMAT_OPTIONS[0], audience: AUDIENCE_OPTIONS[1], topic: TOPIC_OPTIONS[0], message: '' };
+const EMPTY = { name: '', email: '', organization: '', orgType: ORG_OPTIONS[0], phone: '', date: '', location: '', setting: SETTING_OPTIONS[0], format: FORMAT_OPTIONS[0], audience: AUDIENCE_OPTIONS[1], topic: TOPIC_OPTIONS[0], message: '' };
+
+function Audiences() {
+  return (
+    <section id="speaking-audiences" style={{ padding: 'var(--section-y) var(--gutter) 0' }}>
+      <SectionHeading number="Sect. 01" title="Who James speaks to" note="Three kinds of rooms, one message: everyone deserves the chance to get a little better every day." />
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(280px,100%),1fr))', gap: 'clamp(24px,3vw,48px)', paddingTop: '32px' }}>
+        {AUDIENCES.map((a) => (
+          <div key={a.title} style={{ display: 'grid', gap: '14px', alignContent: 'start', borderTop: '3px solid #FC1111', paddingTop: '20px' }}>
+            <h3 style={h3Style}>{a.title}</h3>
+            <p style={{ margin: 0, lineHeight: 1.66, color: 'var(--text-body)', textWrap: 'pretty' }}>{a.desc}</p>
+            <span style={{ fontSize: '.875rem', lineHeight: 1.6, color: '#8a93a0' }}>{a.examples}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
 
 function Topics() {
   return (
     <section id="speaking-topics" style={{ padding: 'var(--section-y) var(--gutter)' }}>
-      <SectionHeading number="Sect. 01" title="Speaking topics" note="Keynotes and sessions for conferences, organizations and teams nationwide. Every talk is shaped around the audience in the room." />
+      <SectionHeading number="Sect. 02" title="Speaking topics" note="Every talk is shaped around the audience in the room. These are where most conversations start." />
       <div>
         {TOPICS.map((t, i) => (
           <div key={t.title} className="be-program-row" style={{ display: 'grid', gridTemplateColumns: 'auto minmax(0,1.3fr) minmax(0,.7fr)', gap: 'clamp(14px,2.4vw,38px)', alignItems: 'baseline', padding: 'clamp(22px,3vw,38px) 0', borderBottom: '1px solid var(--border-subtle)' }}>
@@ -37,7 +54,7 @@ function Topics() {
 function Formats() {
   return (
     <section id="speaking-formats" style={{ padding: '0 var(--gutter) var(--section-y)' }}>
-      <SectionHeading number="Sect. 02" title="Formats & logistics" />
+      <SectionHeading number="Sect. 03" title="Formats & logistics" />
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(300px,100%),1fr))', gap: 'clamp(32px,5vw,72px)', paddingTop: '32px' }}>
         <div style={{ display: 'grid', gap: '16px', alignContent: 'start' }}>
           <h3 style={h3Style}>How James presents</h3>
@@ -126,7 +143,7 @@ function RequestForm() {
 
   return (
     <section id="speaking-request" style={{ padding: '0 var(--gutter) var(--section-y)' }}>
-      <SectionHeading number="Sect. 04" title="Invite James to speak" note="Share what you know so far. Dates and details can be worked out together." />
+      <SectionHeading number="Sect. 05" title="Invite James to speak" note="Share what you know so far. Dates and details can be worked out together." />
       <div className="be-stack-sm" style={{ display: 'grid', gridTemplateColumns: 'minmax(0,2fr) minmax(0,1fr)', gap: 'clamp(32px,5vw,80px)', alignItems: 'start', paddingTop: '32px' }}>
         {status !== 'sent' ? (
           <form ref={ref} onSubmit={submit} noValidate name="speaking" style={{ display: 'grid', gap: '24px', minWidth: 0 }}>
@@ -136,8 +153,9 @@ function RequestForm() {
             </div>
             <div style={twoUp}>
               <TextField id="sp-organization" label="Organization or event" required autoComplete="organization" {...ctrl('organization')} />
-              <TextField id="sp-phone" label="Phone" type="tel" hint="Optional" autoComplete="tel" {...ctrl('phone')} />
+              <SelectField id="sp-orgType" label="Type of organization" options={ORG_OPTIONS} {...ctrl('orgType')} />
             </div>
+            <TextField id="sp-phone" label="Phone" type="tel" hint="Optional" autoComplete="tel" {...ctrl('phone')} />
             <div style={twoUp}>
               <TextField id="sp-date" label="Event date or timeframe" hint="For example: March 12, or spring 2027" {...ctrl('date')} />
               <TextField id="sp-location" label="Event location" hint="City and state, or virtual" {...ctrl('location')} />
@@ -187,15 +205,16 @@ export default function Speaking() {
         kicker="Speaking · Available nationwide"
         title="Movement Is for"
         accent="Everyone"
-        deck="James speaks at conferences, associations, companies and organizations across the country about inclusive fitness, healthier generations and building habits that last. Practical, warm and grounded in years of coaching people of all abilities."
+        deck="James speaks to nonprofits, behavioral and physical health providers, and graduating classes across the country. He shows organizations how to serve people of all abilities through movement, and challenges young people to build a life around purpose and passion rather than money."
         primary={{ label: 'Invite James to speak', href: '#speaking/request' }}
         secondary={{ label: 'Meet James', href: '#speaking/about' }}
       />
       <StatRow items={SPEAKING_FACTS} style={{ borderTop: '1px solid var(--border-strong)' }} />
+      <Audiences />
       <Topics />
       <Formats />
       <About />
-      <Publications id="speaking-publications" number="Sect. 03" note="The book, the video and the writing behind the talks." />
+      <Publications id="speaking-publications" number="Sect. 04" note="The book, the video and the writing behind the talks." />
       <RequestForm />
     </>
   );
