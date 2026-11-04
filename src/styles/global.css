@@ -13,7 +13,7 @@ a:hover { color: #00A8F3; }
 [data-pos="james"] img { object-position: 12% 50%; }
 [data-pos="kite"] img { object-position: 50% 58%; }
 [data-pos="group"] img { object-position: 50% 28%; }
-[data-pos="speaker"] img { object-position: 50% 14%; }
+[data-pos="speaker-hero"] img { object-position: 50% 8%; }
 
 .be-shell { display: grid; grid-template-columns: var(--rail-width) minmax(0, 1fr); align-items: start; }
 .be-rail { z-index: 5; min-height: 100vh; box-sizing: border-box; background: #101012; }

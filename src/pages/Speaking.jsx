@@ -1,7 +1,7 @@
 // Speaking page, built on the speaker one-sheet: who James is and who he helps, three topics
 // with takeaways and PDF topic sheets, formats, video, media coverage, schedule and booking.
 import { useRef, useState } from 'react';
-import { Button, Eyebrow, Field, Quote, SectionHeading, SelectField, Split, StatRow, TextArea, TextField, TextLink } from '../ds';
+import { Button, Eyebrow, Field, Plate, Quote, SectionHeading, SelectField, StatRow, TextArea, TextField, TextLink } from '../ds';
 import { AsSeenIn, MediaList, VideoEmbed } from '../components/Media.jsx';
 import { Bullet, LinkButton, h2Style, h3Style, metaLabel } from '../components/ui.jsx';
 import { CONTACT, IMG, isEmail } from '../data/site.js';
@@ -25,23 +25,34 @@ const EMPTY = {
 function Intro() {
   return (
     <>
-      <Split image={IMG.headshot} imageAlt="Headshot of James Anderson, CSCS, smiling with arms crossed" style={{ borderTop: 0 }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '22px', maxWidth: '52ch' }}>
-          <Eyebrow>Speaking · Available nationwide</Eyebrow>
-          <h1 style={{ margin: 0, fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'var(--text-h1-size)', lineHeight: 'var(--text-h1-lh)', letterSpacing: 'var(--tracking-display)', textTransform: 'uppercase', color: 'var(--text-strong)' }}>
-            James Anderson, <span style={{ color: 'var(--be-red)' }}>CSCS</span>
-          </h1>
-          <span style={{ ...metaLabel, color: 'var(--text-strong)' }}>Speaker · Inclusive fitness coach · Author of Legacy of Health</span>
-          <p style={bodyP}>
-            James is a Certified Strength &amp; Conditioning Specialist and former Registered Behavior Technician who coaches people of all abilities. He helps nonprofits and behavioral and physical health providers serve clients with special needs through movement, and challenges graduating classes to build a life around purpose and passion rather than money.
-          </p>
-          <div style={{ display: 'flex', gap: '16px 24px', alignItems: 'center', flexWrap: 'wrap' }}>
+      <Plate
+        data-pos="speaker-hero"
+        breakRail={false}
+        src={IMG.headshot}
+        alt="James Anderson, CSCS, smiling with arms crossed in front of the red Better Everyday stripes"
+        number="Speaker"
+        caption="James Anderson, CSCS · Better Everyday Athletics"
+        height="clamp(320px,40vw,560px)"
+      />
+      <section style={{ padding: 'clamp(36px,5vw,72px) var(--gutter) clamp(28px,3.6vw,50px)' }}>
+        <Eyebrow style={{ marginBottom: 'clamp(16px,2.4vw,28px)' }}>Speaking · Available nationwide</Eyebrow>
+        <h1 style={{ margin: 0, fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'var(--text-display-size)', lineHeight: 'var(--text-display-lh)', letterSpacing: 'var(--tracking-display)', textTransform: 'uppercase', color: 'var(--text-strong)', textWrap: 'balance' }}>
+          James Anderson, <span style={{ color: 'var(--be-red)' }}>CSCS</span>
+        </h1>
+        <div className="be-stack-sm" style={{ display: 'grid', gridTemplateColumns: 'repeat(12,1fr)', gap: 'var(--space-5)', marginTop: 'clamp(24px,3.2vw,40px)', borderTop: '1px solid var(--border-strong)', paddingTop: 'var(--space-5)' }}>
+          <div style={{ gridColumn: 'span 7', display: 'grid', gap: '14px' }}>
+            <span style={{ ...metaLabel, color: 'var(--text-strong)' }}>Speaker · Inclusive fitness coach · Author of Legacy of Health</span>
+            <p style={{ ...bodyP, maxWidth: '56ch' }}>
+              James is a Certified Strength &amp; Conditioning Specialist and former Registered Behavior Technician who coaches people of all abilities. He helps nonprofits and behavioral and physical health providers serve clients with special needs through movement, and challenges graduating classes to build a life around purpose and passion rather than money.
+            </p>
+          </div>
+          <div style={{ gridColumn: 'span 5', display: 'flex', gap: '16px 24px', alignItems: 'center', flexWrap: 'wrap', alignContent: 'flex-start' }}>
             <Button size="lg" href={REQUEST}>Invite James to speak</Button>
             <TextLink href="#speaking/topics">See the topics</TextLink>
           </div>
         </div>
-      </Split>
-      <StatRow items={SPEAKING_FACTS} />
+      </section>
+      <StatRow items={SPEAKING_FACTS} style={{ borderTop: '1px solid var(--border-strong)' }} />
       <AsSeenIn scope="national" label="As seen in" note="James’s feature “Why Inclusive Fitness Is About More Than Exercise” ran in 2,622 news outlets across all 50 states." />
     </>
   );
