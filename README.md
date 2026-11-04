@@ -9,7 +9,7 @@ Claude Design prototype `Better Everyday Site.dc.html` and the Better Everyday d
 |---|---|
 | `#home` | Home: lede, hero photo, stats, ways to work with James, coach bio, testimonials, kite photo, book band (`#book`) |
 | `#services` | Work With James: session packages (`#memberships` scrolls to them), coach headshot, FAQ |
-| `#speaking` (aliases `#about`, `#speaking-engagements`) | Speaking page built on the speaker one-sheet: intro to James, who he helps, three topics with audience takeaways and PDF topic sheets, formats and video, media coverage, speaker schedule and a booking form (Netlify Forms `speaking`; requests also go to `speaking@bettereverydayathletics.com`). |
+| `#speaking` (aliases `#about`, `#speaking-engagements`) | Speaking page built on the speaker one-sheet: intro to James, who he helps, three topics with audience takeaways and PDF topic sheets, formats and video, media coverage, speaker schedule and a booking form (Netlify Forms `speaking`) plus a direct `speaking@bettereverydayathletics.com` email link. |
 | `#media` (alias `#press`) | Media page: every article, interview, video and appearance with what it means for families, Colorado placements and a next-step path. |
 | `#contact` | Contact form (Netlify Forms), email, phone, service area, community photo |
 | `#blog`, `#blog/<slug>` | Blog index and all 11 migrated posts |
