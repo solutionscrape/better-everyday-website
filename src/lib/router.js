@@ -11,6 +11,10 @@ const PAGES = {
   speaking: 'speaking',
   about: 'speaking',
   'speaking-engagements': 'speaking',
+  // Design options for the speaking page (temporary, while one is chosen).
+  'speaking-1': 'speaking',
+  'speaking-2': 'speaking',
+  'speaking-3': 'speaking',
   contact: 'contact',
   blog: 'blog',
   store: 'store',
@@ -21,7 +25,7 @@ const SECTION_PAGES = new Set(['speaking']);
 
 export function parseHash(hash) {
   const [base, sub] = hash.replace(/^#/, '').split('/');
-  return { page: PAGES[base] || 'home', sub: sub ? decodeURIComponent(sub) : null, hash };
+  return { page: PAGES[base] || 'home', base, sub: sub ? decodeURIComponent(sub) : null, hash };
 }
 
 function anchorFor(route) {

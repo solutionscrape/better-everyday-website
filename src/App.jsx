@@ -7,7 +7,7 @@ import { useHashRoute } from './lib/router.js';
 import { useCart } from './lib/cart.jsx';
 import Home from './pages/Home.jsx';
 import Services from './pages/Services.jsx';
-import Speaking from './pages/Speaking.jsx';
+import Speaking from './pages/SpeakingOptions.jsx';
 import Contact from './pages/Contact.jsx';
 import { BlogIndex, BlogPost, POSTS } from './pages/Blog.jsx';
 import { ProductPage, STORE_PRODUCTS, StoreIndex } from './pages/Store.jsx';
@@ -28,7 +28,7 @@ const TITLES = {
 function SitePage({ route }) {
   const { page, sub } = route;
   if (page === 'services') return <Services />;
-  if (page === 'speaking') return <Speaking />;
+  if (page === 'speaking') return <Speaking variant={route.base} />;
   if (page === 'contact') return <Contact />;
   if (page === 'blog') {
     const post = sub && POSTS.find((p) => p.slug === sub);

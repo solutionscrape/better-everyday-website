@@ -6,15 +6,15 @@ import { CONTACT, IMG, isEmail } from '../data/site.js';
 import { AUDIENCES, AUDIENCE_OPTIONS, FORMATS, FORMAT_OPTIONS, ORG_OPTIONS, SETTING_OPTIONS, SPEAKING_FACTS, TOPICS } from '../data/speaking.js';
 import { submitNetlifyForm } from '../lib/netlify-forms.js';
 
-const bodyP = { margin: 0, fontSize: '1.03125rem', lineHeight: 1.7, color: 'var(--text-body)', textWrap: 'pretty' };
+export const bodyP = { margin: 0, fontSize: '1.03125rem', lineHeight: 1.7, color: 'var(--text-body)', textWrap: 'pretty' };
 const twoUp = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(220px,100%),1fr))', gap: '24px' };
 const TOPIC_OPTIONS = [...TOPICS.map((t) => t.title), 'A custom topic', 'Not sure yet'];
 const EMPTY = { name: '', email: '', organization: '', orgType: ORG_OPTIONS[0], phone: '', date: '', location: '', setting: SETTING_OPTIONS[0], format: FORMAT_OPTIONS[0], audience: AUDIENCE_OPTIONS[1], topic: TOPIC_OPTIONS[0], message: '' };
 
-function Audiences() {
+export function Audiences({ number = 'Sect. 01' }) {
   return (
     <section id="speaking-audiences" style={{ padding: 'var(--section-y) var(--gutter) 0' }}>
-      <SectionHeading number="Sect. 01" title="Who James speaks to" note="Three kinds of rooms, one message: everyone deserves the chance to get a little better every day." />
+      <SectionHeading number={number} title="Who James speaks to" note="Three kinds of rooms, one message: everyone deserves the chance to get a little better every day." />
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(280px,100%),1fr))', gap: 'clamp(24px,3vw,48px)', paddingTop: '32px' }}>
         {AUDIENCES.map((a) => (
           <div key={a.title} style={{ display: 'grid', gap: '14px', alignContent: 'start', borderTop: '3px solid #FC1111', paddingTop: '20px' }}>
@@ -28,10 +28,10 @@ function Audiences() {
   );
 }
 
-function Topics() {
+export function Topics({ number = 'Sect. 02' }) {
   return (
     <section id="speaking-topics" style={{ padding: 'var(--section-y) var(--gutter)' }}>
-      <SectionHeading number="Sect. 02" title="Speaking topics" note="Every talk is shaped around the audience in the room. These are where most conversations start." />
+      <SectionHeading number={number} title="Speaking topics" note="Every talk is shaped around the audience in the room. These are where most conversations start." />
       <div>
         {TOPICS.map((t, i) => (
           <div key={t.title} className="be-program-row" style={{ display: 'grid', gridTemplateColumns: 'auto minmax(0,1.3fr) minmax(0,.7fr)', gap: 'clamp(14px,2.4vw,38px)', alignItems: 'baseline', padding: 'clamp(22px,3vw,38px) 0', borderBottom: '1px solid var(--border-subtle)' }}>
@@ -51,10 +51,10 @@ function Topics() {
   );
 }
 
-function Formats() {
+export function Formats({ number = 'Sect. 03' }) {
   return (
     <section id="speaking-formats" style={{ padding: '0 var(--gutter) var(--section-y)' }}>
-      <SectionHeading number="Sect. 03" title="Formats & logistics" />
+      <SectionHeading number={number} title="Formats & logistics" />
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(300px,100%),1fr))', gap: 'clamp(32px,5vw,72px)', paddingTop: '32px' }}>
         <div style={{ display: 'grid', gap: '16px', alignContent: 'start' }}>
           <h3 style={h3Style}>How James presents</h3>
@@ -73,7 +73,7 @@ function Formats() {
   );
 }
 
-function About() {
+export function About({ base = '#speaking' }) {
   return (
     <div id="speaking-about">
       <Split reverse image={IMG.headshot} imageAlt="Headshot of James Anderson, CSCS, smiling with arms crossed">
@@ -86,7 +86,7 @@ function About() {
           <p style={bodyP}>James is an NSCA Certified Strength &amp; Conditioning Specialist, a former Registered Behavior Technician and the author of <em>Legacy of Health</em>. His mission is woven into everything he does, from coaching athletes to supporting individuals with intellectual and developmental disabilities.</p>
           <p style={bodyP}>His work with the Special Olympics of Colorado and his background in behavioral therapy give him a rare depth of understanding when it comes to motivation, adaptation and personal growth. He builds meaningful connections, provides unwavering encouragement and celebrates every win, big or small.</p>
           <div style={{ display: 'flex', gap: '8px 24px', flexWrap: 'wrap' }}>
-            <TextLink href="#speaking/request">Invite James to speak</TextLink>
+            <TextLink href={base + '/request'}>Invite James to speak</TextLink>
             <TextLink href="#services">Work with James</TextLink>
           </div>
         </div>
@@ -104,7 +104,7 @@ function About() {
   );
 }
 
-function RequestForm() {
+export function RequestForm({ number = 'Sect. 05' }) {
   const [form, setForm] = useState(EMPTY);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle'); // idle | sending | sent | failed
@@ -143,7 +143,7 @@ function RequestForm() {
 
   return (
     <section id="speaking-request" style={{ padding: '0 var(--gutter) var(--section-y)' }}>
-      <SectionHeading number="Sect. 05" title="Invite James to speak" note="Share what you know so far. Dates and details can be worked out together." />
+      <SectionHeading number={number} title="Invite James to speak" note="Share what you know so far. Dates and details can be worked out together." />
       <div className="be-stack-sm" style={{ display: 'grid', gridTemplateColumns: 'minmax(0,2fr) minmax(0,1fr)', gap: 'clamp(32px,5vw,80px)', alignItems: 'start', paddingTop: '32px' }}>
         {status !== 'sent' ? (
           <form ref={ref} onSubmit={submit} noValidate name="speaking" style={{ display: 'grid', gap: '24px', minWidth: 0 }}>
@@ -198,7 +198,8 @@ function RequestForm() {
   );
 }
 
-export default function Speaking() {
+/** Option 1 · Program guide: audiences, topics, formats, bio, publications, form. */
+export function SpeakingGuide({ base = '#speaking' }) {
   return (
     <>
       <Lede
@@ -206,14 +207,14 @@ export default function Speaking() {
         title="Movement Is for"
         accent="Everyone"
         deck="James speaks to nonprofits, behavioral and physical health providers, and graduating classes across the country. He shows organizations how to serve people of all abilities through movement, and challenges young people to build a life around purpose and passion rather than money."
-        primary={{ label: 'Invite James to speak', href: '#speaking/request' }}
-        secondary={{ label: 'Meet James', href: '#speaking/about' }}
+        primary={{ label: 'Invite James to speak', href: base + '/request' }}
+        secondary={{ label: 'Meet James', href: base + '/about' }}
       />
       <StatRow items={SPEAKING_FACTS} style={{ borderTop: '1px solid var(--border-strong)' }} />
       <Audiences />
       <Topics />
       <Formats />
-      <About />
+      <About base={base} />
       <Publications id="speaking-publications" number="Sect. 04" note="The book, the video and the writing behind the talks." />
       <RequestForm />
     </>
