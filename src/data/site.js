@@ -1,6 +1,8 @@
 export const CONTACT = {
   phone: '(303) 579-7350',
   email: 'james@bettereverydayathletics.com',
+  // Speaking requests only. The mailbox must exist before launch.
+  speakingEmail: 'speaking@bettereverydayathletics.com',
 };
 export const phoneDigits = CONTACT.phone.replace(/[^0-9]/g, '');
 
@@ -22,7 +24,8 @@ export const IMG = {
 export const NAV = [
   { label: 'Home', href: '#home', page: 'home' },
   { label: 'Work With James', href: '#services', page: 'services' },
-  { label: 'About & Speaking', href: '#speaking', page: 'speaking' },
+  { label: 'Speaking', href: '#speaking', page: 'speaking' },
+  { label: 'Media', href: '#media', page: 'media' },
   { label: 'Store', href: '#store', page: 'store' },
   { label: 'Blog', href: '#blog', page: 'blog' },
   { label: 'Contact', href: '#contact', page: 'contact' },

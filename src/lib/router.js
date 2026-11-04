@@ -1,27 +1,25 @@
 import { useEffect, useState } from 'react';
 
 // Hash routes, matching the prototype: #home, #services (alias #memberships),
-// #speaking (aliases #about, #speaking-engagements), #contact, #blog[/slug],
+// #speaking (aliases #about, #speaking-engagements), #media (alias #press), #contact, #blog[/slug],
 // #store[/id], #portal[/tab].
-// #book and #packages scroll to sections on Home; #speaking/<section> scrolls to
-// the element with id "speaking-<section>" on the Speaking page.
+// #book and #packages scroll to sections on Home; #speaking/<section> and #media/<section>
+// scroll to the element with id "<page>-<section>".
 const PAGES = {
   services: 'services',
   memberships: 'services',
   speaking: 'speaking',
   about: 'speaking',
   'speaking-engagements': 'speaking',
-  // Design options for the speaking page (temporary, while one is chosen).
-  'speaking-1': 'speaking',
-  'speaking-2': 'speaking',
-  'speaking-3': 'speaking',
+  media: 'media',
+  press: 'media',
   contact: 'contact',
   blog: 'blog',
   store: 'store',
   portal: 'portal',
 };
 const ANCHORS = new Set(['#book', '#packages', '#memberships']);
-const SECTION_PAGES = new Set(['speaking']);
+const SECTION_PAGES = new Set(['speaking', 'media']);
 
 export function parseHash(hash) {
   const [base, sub] = hash.replace(/^#/, '').split('/');

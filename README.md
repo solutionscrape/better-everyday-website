@@ -9,7 +9,8 @@ Claude Design prototype `Better Everyday Site.dc.html` and the Better Everyday d
 |---|---|
 | `#home` | Home: lede, hero photo, stats, ways to work with James, coach bio, testimonials, kite photo, book band (`#book`) |
 | `#services` | Work With James: session packages (`#memberships` scrolls to them), coach headshot, FAQ |
-| `#speaking` (aliases `#about`, `#speaking-engagements`) | About & Speaking: speaking topics, formats, James's bio, publications and a speaking request form (Netlify Forms, form name `speaking`). `#speaking/request` and `#speaking/about` jump to those sections. Topics live in `src/data/speaking.js` and are drafts to confirm with James. |
+| `#speaking` (aliases `#about`, `#speaking-engagements`) | Speaking page built on the speaker one-sheet: intro to James, who he helps, three topics with audience takeaways and PDF topic sheets, formats and video, media coverage, speaker schedule and a booking form (Netlify Forms `speaking`; requests also go to `speaking@bettereverydayathletics.com`). |
+| `#media` (alias `#press`) | Media page: every article, interview, video and appearance with what it means for families, Colorado placements and a next-step path. |
 | `#contact` | Contact form (Netlify Forms), email, phone, service area, community photo |
 | `#blog`, `#blog/<slug>` | Blog index and all 11 migrated posts |
 | `#store`, `#store/<id>` | Store (book and swag only) with Publications / Swag filter; product pages with size picker. Session packages are sold on Home and Work With James. |
@@ -33,6 +34,9 @@ In production they report an error if the backend call fails, so no message or o
 - `src/data/catalog.js` — **single source of truth** for packages, products and prices. The checkout function imports it too.
 - `src/data/site.js` — contact details, service area, image paths, nav.
 - `src/data/blog-posts.json` — migrated blog content.
+- `src/data/media.js` — every media item in one repeatable format, shown on Home, Media and Speaking. **How to add one: [docs/ADDING-MEDIA.md](docs/ADDING-MEDIA.md).**
+- `src/data/placements/` — syndication data imported from distribution reports (`npm run import-placements`).
+- `src/data/speaking.js` — speaking audiences, topics, formats, schedule and form options. `npm run topic-pdfs` rebuilds the topic sheets in `public/speaking/`.
 - `src/pages/` — pages; `src/pages/portal/` — client portal.
 - `netlify/functions/checkout.mjs` — HubSpot checkout (`POST /api/checkout`).
 
@@ -60,6 +64,10 @@ cart shows an error with James's email address.
 
 If you later generate payment links directly, return the URL as `paymentUrl` from the function and the
 site redirects there automatically.
+
+## Before launch: speaking email
+
+Create the `speaking@bettereverydayathletics.com` mailbox (or alias it to James) in your email provider. The site's links are wired and tested, but mail only arrives once the address exists. Then send a test email to it.
 
 ## Known gaps
 

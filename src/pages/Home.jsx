@@ -3,7 +3,7 @@ import { LinkButton, metaLabel } from '../components/ui.jsx';
 import { PACKAGES, packageLine } from '../data/catalog.js';
 import { IMG, usd } from '../data/site.js';
 import { useCart } from '../lib/cart.jsx';
-import Publications from '../components/Publications.jsx';
+import { AsSeenIn, MediaList } from '../components/Media.jsx';
 
 const bodyP = { margin: 0, fontSize: '1.03125rem', lineHeight: 1.7, color: 'var(--text-body)', textWrap: 'pretty' };
 const h2 = { margin: 0, fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'var(--text-h2-size)', lineHeight: 'var(--text-h2-lh)', letterSpacing: 'var(--tracking-heading)', textTransform: 'uppercase', color: 'var(--text-strong)' };
@@ -64,6 +64,28 @@ function HomePackages() {
   );
 }
 
+/** Short introduction to inclusive fitness for families, linking to the feature and services. */
+function InclusiveFitness() {
+  return (
+    <section style={{ padding: 'var(--section-y) var(--gutter) 0' }}>
+      <div className="be-stack-sm" style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1.2fr)', gap: 'clamp(24px,4vw,64px)', alignItems: 'start' }}>
+        <div style={{ display: 'grid', gap: '14px' }}>
+          <Eyebrow>Inclusive fitness</Eyebrow>
+          <h2 style={h2}>More Than Exercise</h2>
+        </div>
+        <div style={{ display: 'grid', gap: '16px' }}>
+          <p style={bodyP}>Inclusive fitness means exercise built around the person, whatever their abilities. For people with intellectual and developmental disabilities, autism or Down syndrome, it is about more than the workout: confidence, independence and a place to belong.</p>
+          <p style={bodyP}>That is how James coaches every session, at your pace, with families and caregivers welcome.</p>
+          <div style={{ display: 'flex', gap: '8px 24px', flexWrap: 'wrap' }}>
+            <TextLink href="#services">Explore services</TextLink>
+            <TextLink href={'#media'}>{'Read about it in the news'}</TextLink>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -90,6 +112,8 @@ export default function Home() {
           { value: 'Every', label: 'Ability level welcome' },
         ]}
       />
+      <AsSeenIn scope="local" label="As seen in" />
+      <InclusiveFitness />
       <section style={{ padding: 'var(--section-y) var(--gutter)' }}>
         <SectionHeading number="Sect. 01" title="Ways to work with James" note="Start with one session a week. Add more when it feels right. Every plan can change as you do." />
         <ProgramRow
@@ -146,7 +170,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Publications />
+      <MediaList id="media-highlights" variant="families" number="Sect. 03" title="In the news" note="Coverage of James's work, and what it means for families." limit={2} moreHref="#media" />
       <Plate
         data-pos="kite"
         height="clamp(340px,56vw,720px)"
