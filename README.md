@@ -9,6 +9,7 @@ Claude Design prototype `Better Everyday Site.dc.html` and the Better Everyday d
 |---|---|
 | `#home` | Home: lede, hero photo, stats, ways to work with James, coach bio, testimonials, kite photo, book band (`#book`) |
 | `#services` | Work With James: session packages (`#memberships` scrolls to them), coach headshot, FAQ |
+| `#speaking` (aliases `#about`, `#speaking-engagements`) | About & Speaking: speaking topics, formats, James's bio, publications and a speaking request form (Netlify Forms, form name `speaking`). `#speaking/request` and `#speaking/about` jump to those sections. Topics live in `src/data/speaking.js` and are drafts to confirm with James. |
 | `#contact` | Contact form (Netlify Forms), email, phone, service area, community photo |
 | `#blog`, `#blog/<slug>` | Blog index and all 11 migrated posts |
 | `#store`, `#store/<id>` | Store (book and swag only) with Publications / Swag filter; product pages with size picker. Session packages are sold on Home and Work With James. |
@@ -41,7 +42,7 @@ In production they report an error if the backend call fails, so no message or o
 
 ### Contact form
 
-Uses Netlify Forms (form name `contact`). Submissions appear under **Forms** in the Netlify dashboard;
+Uses Netlify Forms (form names `contact` and `speaking`). Submissions appear under **Forms** in the Netlify dashboard;
 add an email notification there so James gets each message.
 
 ### HubSpot setup (checkout)

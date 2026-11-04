@@ -22,6 +22,7 @@ export const IMG = {
 export const NAV = [
   { label: 'Home', href: '#home', page: 'home' },
   { label: 'Work With James', href: '#services', page: 'services' },
+  { label: 'About & Speaking', href: '#speaking', page: 'speaking' },
   { label: 'Store', href: '#store', page: 'store' },
   { label: 'Blog', href: '#blog', page: 'blog' },
   { label: 'Contact', href: '#contact', page: 'contact' },

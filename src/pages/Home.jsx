@@ -1,9 +1,9 @@
-import { Button, Eyebrow, Field, Lede, Plate, ProgramRow, Quote, SectionHeading, SocialLinks, Split, StatRow, TextLink } from '../ds';
+import { Button, Eyebrow, Field, Lede, Plate, ProgramRow, Quote, SectionHeading, Split, StatRow, TextLink } from '../ds';
 import { LinkButton, metaLabel } from '../components/ui.jsx';
 import { PACKAGES, packageLine } from '../data/catalog.js';
 import { IMG, usd } from '../data/site.js';
 import { useCart } from '../lib/cart.jsx';
-import { PUBLICATIONS, SOCIALS } from '../data/social.js';
+import Publications from '../components/Publications.jsx';
 
 const bodyP = { margin: 0, fontSize: '1.03125rem', lineHeight: 1.7, color: 'var(--text-body)', textWrap: 'pretty' };
 const h2 = { margin: 0, fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'var(--text-h2-size)', lineHeight: 'var(--text-h2-lh)', letterSpacing: 'var(--tracking-heading)', textTransform: 'uppercase', color: 'var(--text-strong)' };
@@ -61,29 +61,6 @@ function HomePackages() {
         .
       </p>
     </div>
-  );
-}
-
-function Publications() {
-  return (
-    <section id="publications" style={{ padding: '0 var(--gutter) var(--section-y)' }}>
-      <SectionHeading number="Sect. 03" title="Publications" note="James writes about movement, family health and ADHD. Start with the book." />
-      <div>
-        {PUBLICATIONS.map((p) => (
-          <div key={p.href} className="be-program-row" style={{ display: 'grid', gridTemplateColumns: 'minmax(0,.5fr) minmax(0,1.5fr) auto', gap: 'clamp(14px,2.4vw,38px)', alignItems: 'baseline', padding: 'clamp(18px,2.4vw,28px) 0', borderBottom: '1px solid var(--border-subtle)' }}>
-            <span style={{ ...metaLabel, lineHeight: 1.6 }}>{p.kind}<br /><span style={{ color: 'var(--text-link)' }}>{p.outlet}</span></span>
-            <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(1.1rem,1.7vw,1.4rem)', lineHeight: 1.15, textTransform: 'uppercase', color: 'var(--text-strong)', textWrap: 'pretty' }}>{p.title}</span>
-            <TextLink href={p.href} target="_blank" rel="noopener noreferrer">
-              {p.cta}<span className="visually-hidden"> (opens in a new tab)</span>
-            </TextLink>
-          </div>
-        ))}
-      </div>
-      <div style={{ display: 'flex', gap: '12px 24px', alignItems: 'center', flexWrap: 'wrap', paddingTop: '24px' }}>
-        <span style={metaLabel}>Follow James</span>
-        <SocialLinks items={SOCIALS} />
-      </div>
-    </section>
   );
 }
 
@@ -148,7 +125,10 @@ export default function Home() {
           <h2 style={h2}>James Anderson, CSCS</h2>
           <p style={bodyP}>James is an NSCA Certified Strength &amp; Conditioning Specialist and a former Registered Behavior Technician. He brings both to every session: sound training, and the patience to meet each person where they are.</p>
           <p style={bodyP}>His approach is simple. If you get a little better every day, you will get where you are going.</p>
-          <TextLink href="#contact">Ask James a question</TextLink>
+          <div style={{ display: 'flex', gap: '8px 24px', flexWrap: 'wrap' }}>
+            <TextLink href="#contact">Ask James a question</TextLink>
+            <TextLink href="#speaking">Book James to speak</TextLink>
+          </div>
         </div>
       </Split>
       <section style={{ padding: 'var(--section-y) var(--gutter)' }}>

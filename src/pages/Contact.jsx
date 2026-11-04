@@ -2,19 +2,14 @@ import { useRef, useState } from 'react';
 import { Button, Eyebrow, Lede, Plate, SelectField, TextArea, TextField, TextLink } from '../ds';
 import { LinkButton, h2Style, metaLabel } from '../components/ui.jsx';
 import { CONTACT, IMG, SERVICE_AREA, isEmail, phoneDigits } from '../data/site.js';
+import { submitNetlifyForm } from '../lib/netlify-forms.js';
+
 
 const WHO = ['Myself', 'My child', 'A family member I support', 'A group or facility', 'Not sure yet'];
 const INTEREST = ['1:1 coaching', 'Session package', 'Adaptive & inclusive training', 'Virtual programming', 'Speaking engagement', 'Something else'];
 const EMPTY = { name: '', email: '', phone: '', who: WHO[0], interest: INTEREST[0], message: '' };
 
 const bigLink = { fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.375rem', letterSpacing: '.01em', textDecoration: 'none' };
-
-/** Posts the form to Netlify Forms (the static twin lives in index.html). */
-async function submitToNetlify(form) {
-  const body = new URLSearchParams({ 'form-name': 'contact', ...form }).toString();
-  const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body });
-  if (!res.ok) throw new Error('Form submission failed: ' + res.status);
-}
 
 export default function Contact() {
   const [form, setForm] = useState(EMPTY);
@@ -46,7 +41,7 @@ export default function Contact() {
     }
     setStatus('sending');
     try {
-      await submitToNetlify(form);
+      await submitNetlifyForm('contact', form);
     } catch (err) {
       // The Vite dev server has no Netlify Forms endpoint; let the success state show locally.
       if (!import.meta.env.DEV) {
