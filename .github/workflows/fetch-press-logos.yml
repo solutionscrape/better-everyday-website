@@ -1,8 +1,15 @@
 # Downloads publisher logos for the "As seen in" ticker and commits them to the branch it runs on.
-# Run it from GitHub → Actions → "Fetch press logos" → Run workflow, after importing a new placement report.
+# Runs automatically when placement data changes (e.g. after `npm run import-placements`),
+# or by hand from GitHub → Actions → "Fetch press logos" → Run workflow.
+# Its own commit only touches logo files, so it does not trigger itself again.
 name: Fetch press logos
 
 on:
+  push:
+    paths:
+      - 'src/data/placements/**'
+      - 'scripts/fetch-press-logos.mjs'
+      - '.github/workflows/fetch-press-logos.yml'
   workflow_dispatch:
     inputs:
       refetch:
@@ -24,6 +31,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run fetch-press-logos -- ${{ inputs.refetch && '--all' || '' }}
+        env:
+          FORCE_COLOR: '0'
       - name: Commit logos
         run: |
           git config user.name "github-actions[bot]"
