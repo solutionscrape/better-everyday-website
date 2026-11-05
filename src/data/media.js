@@ -96,7 +96,8 @@ const visible = (item) => (p) => !(item.hide || []).some((re) => re.test(p.url))
 // rename values are a new outlet name, or an object of corrected fields ({ outlet, city, state }).
 const named = (item) => (p) => {
   const fix = (item.rename || {})[p.outlet];
-  return typeof fix === 'string' ? { ...p, outlet: fix } : { ...p, ...fix };
+  // `source` keeps the report's name, which logo files are keyed by.
+  return typeof fix === 'string' ? { ...p, source: p.outlet, outlet: fix } : { ...p, source: p.outlet, ...fix };
 };
 
 /** Curated Colorado / Denver-market placements for an item (business site). */

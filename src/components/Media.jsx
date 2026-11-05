@@ -14,7 +14,7 @@ const stripNetwork = (name) => name.replace(/\s*\((ABC|NBC|CBS|FOX|CW|PBS)[^)]*\
 
 /** One outlet in a ticker: the publisher's logo when we have it, otherwise a name badge. */
 function TickerItem({ p, hidden }) {
-  const logo = logoFor(p.outlet);
+  const logo = logoFor(p.source || p.outlet) || logoFor(p.outlet);
   const network = networkOf(p.outlet);
   return (
     <li aria-hidden={hidden || undefined}>
