@@ -51,6 +51,13 @@ Wait until the piece is **live** and you have its public link.
 
    Re-run the import whenever an updated report comes in.
 
+   **Publisher logos for the ticker:** pushing new placement data runs the GitHub Action
+   "Fetch press logos", which downloads each outlet's logo into `public/img/press/` and commits it.
+   You can also run `npm run fetch-press-logos` anywhere with normal internet access. Logos under
+   48px are rejected, and those outlets show as a name badge (with their TV network if any). To use a
+   hand-picked logo, save it as `public/img/press/<key>.png` and add it to `src/data/press-logos.json`;
+   the key is the outlet name in lowercase with spaces and punctuation removed (`The Buffalo News` → `buffalonews`).
+
 3. **Feature it elsewhere** once it's live:
    - **Blog:** link it from any related post in `src/data/blog-posts.json`.
    - **Newsletter:** add an item using the same `intro` plus the live link.
