@@ -1,0 +1,1474 @@
+{
+ "story": "Why Inclusive Fitness Is About More Than Exercise",
+ "distributed": "2026-08-24",
+ "stats": {
+  "placements": 2622,
+  "monthlyVisitors": 154711657,
+  "states": 50,
+  "metroMarkets": "185+"
+ },
+ "colorado": [
+  {
+   "outlet": "The Daily Sentinel",
+   "city": "Grand Junction",
+   "state": "CO",
+   "market": "Grand Junction-Montrose, CO DMA",
+   "reach": 260935,
+   "date": "09/01/26",
+   "url": "https://www.gjsentinel.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_00746ac4-cb8e-50cf-b895-2c23d506ee43.html"
+  },
+  {
+   "outlet": "University of Colorado - Boulder",
+   "city": "Boulder",
+   "state": "CO",
+   "market": "Denver, CO DMA",
+   "reach": 32775,
+   "date": "09/02/26",
+   "url": "https://cuindependent.campusave.com/around-town/why-inclusive-f-54836.htm"
+  },
+  {
+   "outlet": "CU Independent",
+   "city": "Boulder",
+   "state": "CO",
+   "market": "Denver, CO DMA",
+   "reach": 32775,
+   "date": "09/22/26",
+   "url": "http://cuindependent.com/classifieds/#https://cuindependent.campusave.com/around-town/why-inclusive-f-54836.htm"
+  },
+  {
+   "outlet": "The Pagosa Springs Sun",
+   "city": "Pagosa Springs",
+   "state": "CO",
+   "market": "Denver, CO DMA",
+   "reach": 31933,
+   "date": "09/01/26",
+   "url": "https://www.pagosasun.com/stories/why-inclusive-fitness-is-about-more-than-exercise,149843"
+  },
+  {
+   "outlet": "University of Colorado - Denver",
+   "city": "Denver",
+   "state": "CO",
+   "market": "Denver, CO DMA",
+   "reach": 18937,
+   "date": "09/02/26",
+   "url": "https://ucdadvocate.campusave.com/around-town/why-inclusive-f-54836.htm"
+  },
+  {
+   "outlet": "University of Wyoming",
+   "city": "Laramie",
+   "state": "WY",
+   "market": "Denver, CO DMA",
+   "reach": 12627,
+   "date": "09/01/26",
+   "url": "http://laramie.campusave.com/around-town/other-6320/why-inclusive-f-733902610.htm"
+  },
+  {
+   "outlet": "University of Northern Colorado",
+   "city": "Greeley",
+   "state": "CO",
+   "market": "Denver, CO DMA",
+   "reach": 12260,
+   "date": "09/01/26",
+   "url": "http://uncmirror.campusave.com/around-town/other-6320/why-inclusive-f-733902634.htm"
+  },
+  {
+   "outlet": "University of Colorado - Colorado Springs",
+   "city": "Colorado Springs",
+   "state": "CO",
+   "market": "Colorado Springs-Pueblo, CO DMA",
+   "reach": 11132,
+   "date": "09/02/26",
+   "url": "https://scribe.campusave.com/around-town/why-inclusive-f-54836.htm"
+  },
+  {
+   "outlet": "Mesa State College",
+   "city": "Grand Junction",
+   "state": "CO",
+   "market": "Grand Junction-Montrose, CO DMA",
+   "reach": 10662,
+   "date": "09/01/26",
+   "url": "http://grand-junction-co.campusave.com/around-town/other-6320/why-inclusive-f-733902844.htm"
+  },
+  {
+   "outlet": "The Estes Park News",
+   "city": "Estes Park",
+   "state": "CO",
+   "market": "Denver, CO DMA",
+   "reach": 8910,
+   "date": "09/01/26",
+   "url": "https://www.estesparknews.com/online_features/fashion_beauty_fitness/article_c157405a-6c3f-5ca3-8d3f-f663b2ba7d4b.html"
+  },
+  {
+   "outlet": "Colorado Mountain College",
+   "city": "Glenwood Springs",
+   "state": "CO",
+   "market": "CO Nonmetropolitan Area",
+   "reach": 5823,
+   "date": "09/01/26",
+   "url": "http://glenwood-springs-co.campusave.com/around-town/other-6320/why-inclusive-f-733902842.htm"
+  },
+  {
+   "outlet": "Colorado School of Mines",
+   "city": "Golden",
+   "state": "CO",
+   "market": "Denver, CO DMA",
+   "reach": 5794,
+   "date": "09/01/26",
+   "url": "http://golden-co.campusave.com/around-town/other-6320/why-inclusive-f-733902843.htm"
+  },
+  {
+   "outlet": "Aurora Herald",
+   "city": "Aurora",
+   "state": "CO",
+   "market": "Denver, CO DMA",
+   "reach": 5550,
+   "date": "09/01/26",
+   "url": "http://auroraherald.com/stories/why-inclusive-fitness-is-about-more-than-exercise,2032500?"
+  },
+  {
+   "outlet": "Colorado State University - Pueblo",
+   "city": "Pueblo",
+   "state": "CO",
+   "market": "Colorado Springs-Pueblo, CO DMA",
+   "reach": 5006,
+   "date": "09/01/26",
+   "url": "http://pueblo-co.campusave.com/around-town/other-6320/why-inclusive-f-733902847.htm"
+  },
+  {
+   "outlet": "Anton Co-op",
+   "city": "Anton",
+   "state": "CO",
+   "market": "CO Non-Metropolitan Area",
+   "reach": 4800,
+   "date": "09/01/26",
+   "url": "http://www.antoncoop.com/markets/stocks.php?article=newsusa-2026-8-24-why-inclusive-fitness-is-about-more-than-exercise"
+  },
+  {
+   "outlet": "Colorado State University",
+   "city": "Fort Collins",
+   "state": "CO",
+   "market": "Denver, CO DMA",
+   "reach": 4682,
+   "date": "09/01/26",
+   "url": "http://rmcollegian.campusave.com/around-town/other-6320/why-inclusive-f-733902715.htm"
+  },
+  {
+   "outlet": "Schramm Feedlot",
+   "city": "Yuma",
+   "state": "CO",
+   "market": "CO Non-Metropolitan Area",
+   "reach": 3990,
+   "date": "09/01/26",
+   "url": "http://www.schrammfeedlot.net/markets/stocks.php?article=newsusa-2026-8-24-why-inclusive-fitness-is-about-more-than-exercise"
+  },
+  {
+   "outlet": "Fort Lewis College",
+   "city": "Durango",
+   "state": "CO",
+   "market": "CO Nonmetropolitan Area",
+   "reach": 3856,
+   "date": "09/01/26",
+   "url": "http://durango-co.campusave.com/around-town/other-6320/why-inclusive-f-733902841.htm"
+  },
+  {
+   "outlet": "Adams State College",
+   "city": "Alamosa",
+   "state": "CO",
+   "market": "CO Non-Metropolitan Area",
+   "reach": 3701,
+   "date": "09/01/26",
+   "url": "http://alamosa-co.campusave.com/around-town/other-6320/why-inclusive-f-733902839.htm"
+  },
+  {
+   "outlet": "Western State College of Colorado",
+   "city": "Gunnison",
+   "state": "CO",
+   "market": "CO Nonmetropolitan Area",
+   "reach": 2419,
+   "date": "09/01/26",
+   "url": "http://gunnison-co.campusave.com/around-town/other-6320/why-inclusive-f-733902845.htm"
+  },
+  {
+   "outlet": "San Miguel Basin Forum",
+   "city": "Nucla",
+   "state": "CO",
+   "market": "CO Non-Metropolitan Area",
+   "reach": null,
+   "date": "09/01/26",
+   "url": "https://www.sanmiguelbasinforum.com/stories/why-inclusive-fitness-is-about-more-than-exercise,127333"
+  },
+  {
+   "outlet": "Denver Daily Tribune",
+   "city": "Denver",
+   "state": "CO",
+   "market": "Denver, CO DMA",
+   "reach": null,
+   "date": "09/01/26",
+   "url": "http://denverdailytribune.com/stories/why-inclusive-fitness-is-about-more-than-exercise,2032500?"
+  },
+  {
+   "outlet": "Colorado Cannabis Times",
+   "city": "Denver",
+   "state": "CO",
+   "market": "N/A",
+   "reach": null,
+   "date": "09/01/26",
+   "url": "https://www.coloradocannabistimes.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_29f20dd7-afcb-5135-849d-362de09b746b.html"
+  },
+  {
+   "outlet": "Pcrecord Times",
+   "city": "Wheatland",
+   "state": "WY",
+   "market": "Denver, CO DMA",
+   "reach": null,
+   "date": "09/01/26",
+   "url": "https://www.pcrecordtimes.com/stories/why-inclusive-fitness-is-about-more-than-exercise,152518"
+  },
+  {
+   "outlet": "The Mountain Ear",
+   "city": "Nederland",
+   "state": "CO",
+   "market": "Denver, CO DMA",
+   "reach": null,
+   "date": "09/01/26",
+   "url": "https://www.themtnear.com/stories/why-inclusive-fitness-is-about-more-than-exercise,106465"
+  },
+  {
+   "outlet": "The Leader - Limon",
+   "city": "Limon",
+   "state": "CO",
+   "market": "Denver, CO DMA",
+   "reach": null,
+   "date": "09/01/26",
+   "url": "https://www.thelimonleader.com/stories/why-inclusive-fitness-is-about-more-than-exercise,99215"
+  },
+  {
+   "outlet": "Lakewood, CO",
+   "city": "Lakewood",
+   "state": "CO",
+   "market": "Denver, Colorado Springs",
+   "reach": null,
+   "date": "09/01/26",
+   "url": "http://lakewood-co.campusave.com/around-town/other-6320/why-inclusive-f-733902846.htm"
+  },
+  {
+   "outlet": "Usaf a, CO",
+   "city": "USAFA",
+   "state": "CO",
+   "market": "Colorado Springs, Pueblo DMA",
+   "reach": null,
+   "date": "09/01/26",
+   "url": "http://usafa-co.campusave.com/around-town/other-6320/why-inclusive-f-733902848.htm"
+  },
+  {
+   "outlet": "Caribou Current",
+   "city": "Boulder",
+   "state": "CO",
+   "market": "San Francisco, Oakland, San Jose, CA",
+   "reach": null,
+   "date": "09/01/26",
+   "url": "https://www.cariboucurrent.com/stories/why-inclusive-fitness-is-about-more-than-exercise,106465"
+  },
+  {
+   "outlet": "Colorado Springs Star",
+   "city": "Colorado Springs",
+   "state": "CO",
+   "market": "Colorado Springs-Pueblo, CO DMA",
+   "reach": null,
+   "date": "09/01/26",
+   "url": "http://coloradospringsstar.com/stories/why-inclusive-fitness-is-about-more-than-exercise,2032500?"
+  },
+  {
+   "outlet": "Gunn Is on Times",
+   "city": "Gunnison",
+   "state": "VA",
+   "market": "Denver, CO",
+   "reach": null,
+   "date": "09/01/26",
+   "url": "https://www.gunnisontimes.com/stories/why-inclusive-fitness-is-about-more-than-exercise,58327"
+  },
+  {
+   "outlet": "Centennial, CO",
+   "city": "Centennial",
+   "state": "CO",
+   "market": "Denver, CO",
+   "reach": null,
+   "date": "09/01/26",
+   "url": "http://centennial-co.campusave.com/around-town/other-6320/why-inclusive-f-733902840.htm"
+  }
+ ],
+ "broadcast": [
+  {
+   "outlet": "WFMZ-TV",
+   "city": "Allentown",
+   "state": "PA",
+   "market": "Philadelphia, PA DMA",
+   "reach": 4000000,
+   "date": "09/11/26",
+   "url": "https://www.wfmz.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_31582947-1263-59d6-b12d-e479b8c09791.html"
+  },
+  {
+   "outlet": "WKOW-TV (ABC)",
+   "city": "Madison",
+   "state": "WI",
+   "market": "Madison, WI DMA",
+   "reach": 2026000,
+   "date": "09/01/26",
+   "url": "https://www.wkow.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_31bd1155-8ca2-53fb-b237-50d8771e12d0.html"
+  },
+  {
+   "outlet": "KHQ-TV (NBC)",
+   "city": "Spokane",
+   "state": "WA",
+   "market": "Spokane DMA",
+   "reach": 1700000,
+   "date": "09/01/26",
+   "url": "https://www.khq.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_2a2c54a9-dc6f-5df4-a4aa-5bb0c67b8630.html"
+  },
+  {
+   "outlet": "KVOA-TV (NBC)",
+   "city": "Tucson",
+   "state": "AZ",
+   "market": "Tucson-Sierra Vista DMA",
+   "reach": 1620000,
+   "date": "09/01/26",
+   "url": "https://www.kvoa.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_db32584d-2cd9-51d5-bc05-4f5cabef7dec.html"
+  },
+  {
+   "outlet": "KWWL-TV (NBC)",
+   "city": "Waterloo",
+   "state": "IA",
+   "market": "Cedar Rapids-Waterloo-Iowa City-Dubuque DMA",
+   "reach": 1487000,
+   "date": "11/04/26",
+   "url": "https://www.kwwl.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_d0dfce87-b64e-536c-bcd4-009f4557e04b.html"
+  },
+  {
+   "outlet": "WJRT-TV (ABC)",
+   "city": "Flint",
+   "state": "MI",
+   "market": "Flint-Saginaw-Bay City, MI DMA",
+   "reach": 1268000,
+   "date": "09/01/26",
+   "url": "https://www.abc12.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_6f8dc0ac-8761-5f31-8a5e-d5c475fb3548.html"
+  },
+  {
+   "outlet": "WBOC-TV (CBS)",
+   "city": "Salisbury",
+   "state": "MD",
+   "market": "Salisbury, MD DMA",
+   "reach": 1140000,
+   "date": "09/01/26",
+   "url": "https://www.wboc.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_c93a9f9c-abc1-51a8-b982-876f6fd6576d.html"
+  },
+  {
+   "outlet": "KITV (ABC 4)",
+   "city": "Honolulu",
+   "state": "HI",
+   "market": "Honolulu, HI DMA",
+   "reach": 1030000,
+   "date": "09/01/26",
+   "url": "https://www.kitv.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_22011f14-7235-5e88-9a91-5977872080b9.html"
+  },
+  {
+   "outlet": "KTBS-TV (ABC)",
+   "city": "Shreveport",
+   "state": "LA",
+   "market": "Shreveport, LA DMA",
+   "reach": 871483,
+   "date": "09/01/26",
+   "url": "https://www.ktbs.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_b8d4d87f-3d68-5422-9caf-49b3cdfbbba2.html"
+  },
+  {
+   "outlet": "WAOW-TV (ABC)",
+   "city": "Wausau",
+   "state": "WI",
+   "market": "Davenport, IA-Rock Island-Moline, IL DMA",
+   "reach": 716500,
+   "date": "09/01/26",
+   "url": "https://www.waow.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_1a2471dd-4ec5-5ceb-be61-84bfab6faaf4.html"
+  },
+  {
+   "outlet": "KTVN-TV",
+   "city": "Reno",
+   "state": "NV",
+   "market": "Reno, NV DMA",
+   "reach": 686687,
+   "date": "10/07/26",
+   "url": "https://www.2news.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_1302260e-d721-55ce-8f2e-dff60ce2befc.html"
+  },
+  {
+   "outlet": "WQOW-TV (ABC)",
+   "city": "Eau Claire",
+   "state": "WI",
+   "market": "La Crosse-Eau Claire, WI DMA",
+   "reach": 649680,
+   "date": "09/01/26",
+   "url": "https://www.wqow.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_10e46f8e-b9a3-5a47-bb71-9df8d1fd3a19.html"
+  },
+  {
+   "outlet": "WXOW-TV (ABC)",
+   "city": "La Crescent",
+   "state": "MN",
+   "market": "La Crosse-Eau Claire, WI DMA",
+   "reach": 567467,
+   "date": "09/01/26",
+   "url": "https://www.wxow.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_6d2e2404-4563-586d-8e2f-678926fa56a4.html"
+  },
+  {
+   "outlet": "NBC Right Now",
+   "city": "Kennewick",
+   "state": "WA",
+   "market": "Yakima-Pasco-Richland-Kennewick, WA DMA",
+   "reach": 502972,
+   "date": "09/11/26",
+   "url": "https://www.nbcrightnow.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_4bd5b9ea-77e2-5bbf-9adc-15e551bb8fdc.html"
+  },
+  {
+   "outlet": "KULR-TV (NBC)",
+   "city": "Billings",
+   "state": "MT",
+   "market": "Billings, MT DMA",
+   "reach": 237136,
+   "date": "09/01/26",
+   "url": "https://www.kulr8.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_de9d360a-0544-596c-9ef6-bc2ba3a856fc.html"
+  },
+  {
+   "outlet": "CBS 19",
+   "city": "Charlottesville",
+   "state": "VA",
+   "market": "Charlottesville, VA",
+   "reach": 133530,
+   "date": "09/01/26",
+   "url": "https://www.cbs19news.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_2cd406eb-6546-5c66-818c-60fdeb217bb8.html"
+  },
+  {
+   "outlet": "NBC NewsChannel 6 - KPVI Pocatello",
+   "city": "Pocatello",
+   "state": "ID",
+   "market": "Idaho Falls-Pocatello, ID DMA",
+   "reach": 110000,
+   "date": "10/27/26",
+   "url": "https://www.kpvi.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_6a4fb58c-1a74-5a4c-8b06-028db17e6a42.html"
+  },
+  {
+   "outlet": "WDFX-TV (FOX)",
+   "city": "Dothan",
+   "state": "AL",
+   "market": "Dothan, AL",
+   "reach": 95190,
+   "date": "10/22/26",
+   "url": "https://www.wdfxfox34.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_aacc4d2f-1c33-5d64-b4d8-aea615f78ebb.html"
+  },
+  {
+   "outlet": "KTEN (NBC)",
+   "city": "Denison",
+   "state": "TX",
+   "market": "Sherman-Denison, TX MSA",
+   "reach": 71300,
+   "date": "09/01/26",
+   "url": "https://www.kten.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_96e463c5-f437-5811-8c6b-c76f36e771cc.html"
+  },
+  {
+   "outlet": "FOX 47",
+   "city": "",
+   "state": "",
+   "market": "N/A",
+   "reach": 19500,
+   "date": "09/01/26",
+   "url": "https://fox47.marketminute.com/article/newsusa-2026-8-24-why-inclusive-fitness-is-about-more-than-exercise"
+  },
+  {
+   "outlet": "Fort Wayne NBC",
+   "city": "Fort Wayne",
+   "state": "IN",
+   "market": "Ft. Wayne, IN DMA",
+   "reach": 14760,
+   "date": "09/01/26",
+   "url": "https://fwnbc.marketminute.com/article/newsusa-2026-8-24-why-inclusive-fitness-is-about-more-than-exercise"
+  },
+  {
+   "outlet": "KTMF/KWYB-TV (ABC/FOX)",
+   "city": "Missoula",
+   "state": "MT",
+   "market": "Missoula, MT DMA",
+   "reach": 13080,
+   "date": "09/01/26",
+   "url": "https://www.montanarightnow.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_7676c78f-0638-528e-a212-c376c7d8d8ab.html"
+  },
+  {
+   "outlet": "True North Radio Network",
+   "city": "Alpena",
+   "state": "MI",
+   "market": "Alpena, MI DMA",
+   "reach": 9030,
+   "date": "10/24/26",
+   "url": "https://www.truenorthradionetwork.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_3224afa6-a301-5524-8629-3591aa957923.html"
+  },
+  {
+   "outlet": "WPGX (FOX)",
+   "city": "Panama City",
+   "state": "FL",
+   "market": "Panama City-Lynn Haven, FL MSA",
+   "reach": 4770,
+   "date": "09/01/26",
+   "url": "https://www.wpgxfox28.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_6a033d5e-8c26-57e2-869e-fc616ae7764b.html"
+  },
+  {
+   "outlet": "WTNZ-TV (FOX)",
+   "city": "Knoxville",
+   "state": "TN",
+   "market": "Knoxville, TN MSA",
+   "reach": 4470,
+   "date": "09/01/26",
+   "url": "https://www.wtnzfox43.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_65477b0b-3442-5f53-9e01-907d7a72190d.html"
+  },
+  {
+   "outlet": "George Fox University",
+   "city": "Newberg",
+   "state": "OR",
+   "market": "N/A",
+   "reach": 4140,
+   "date": "09/01/26",
+   "url": "http://newberg-or.campusave.com/around-town/other-6320/why-inclusive-f-733903381.htm"
+  },
+  {
+   "outlet": "Coastal TV Broadcasting Grou",
+   "city": "Cumming",
+   "state": "GA",
+   "market": "Atlanta, GA DMA",
+   "reach": 1000,
+   "date": "09/18/26",
+   "url": "https://www.coastaltvnews.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_99a65988-8d3c-5ddc-885d-5ac8e88d0674.html"
+  },
+  {
+   "outlet": "WRSP - WCCU TV",
+   "city": "Champaign",
+   "state": "IL",
+   "market": "N/A",
+   "reach": null,
+   "date": "09/01/26",
+   "url": "https://www.foxillinois.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_d516963d-44d6-551a-9d2a-b88220773608.html"
+  },
+  {
+   "outlet": "CW 18 Milwaukee",
+   "city": "Milwaukee",
+   "state": "WI",
+   "market": "Milwaukee",
+   "reach": null,
+   "date": "10/13/26",
+   "url": "https://www.cw18milwaukee.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_2394a827-e1f2-5e49-853c-c33741953fb3.html"
+  },
+  {
+   "outlet": "Coast TV",
+   "city": "Milton",
+   "state": "DE",
+   "market": "Salisbury, MD DMA",
+   "reach": null,
+   "date": "09/22/26",
+   "url": "https://www.coasttv.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_89744ee8-5226-5d5f-a9c5-13eb3a6cee13.html"
+  }
+ ],
+ "national": [
+  {
+   "outlet": "StarTribune",
+   "city": "Minneapolis",
+   "state": "MN",
+   "market": "Minneapolis-St. Paul, MN DMA",
+   "reach": 10700000,
+   "date": "09/01/26",
+   "url": "https://markets.financialcontent.com/startribune/article/newsusa-2026-8-24-why-inclusive-fitness-is-about-more-than-exercise"
+  },
+  {
+   "outlet": "WRAL.com",
+   "city": "Raleigh",
+   "state": "NC",
+   "market": "Raleigh-Durham (Fayetteville), NC DMA",
+   "reach": 9000000,
+   "date": "09/01/26",
+   "url": "https://markets.financialcontent.com/wral/article/newsusa-2026-8-24-why-inclusive-fitness-is-about-more-than-exercise"
+  },
+  {
+   "outlet": "St. Louis Post-Dispatch",
+   "city": "St. Louis",
+   "state": "MO",
+   "market": "St. Louis, MO DMA",
+   "reach": 5850000,
+   "date": "11/04/26",
+   "url": "https://www.stltoday.com/online_features/fashion_beauty_fitness/article_ea9ca692-bb27-5310-8fe4-b208643fadc7.html"
+  },
+  {
+   "outlet": "The San Diego Union-Tribune",
+   "city": "San Diego",
+   "state": "CA",
+   "market": "San Diego, CA DMA",
+   "reach": 5640000,
+   "date": "09/01/26",
+   "url": "https://markets.financialcontent.com/sandiego/article/newsusa-2026-8-24-why-inclusive-fitness-is-about-more-than-exercise"
+  },
+  {
+   "outlet": "Pittsburgh Post-Gazette",
+   "city": "Pittsburgh",
+   "state": "PA",
+   "market": "Pittsburgh, PA DMA",
+   "reach": 4804000,
+   "date": "09/01/26",
+   "url": "http://markets.financialcontent.com/postgazette/article/newsusa-2026-8-24-why-inclusive-fitness-is-about-more-than-exercise"
+  },
+  {
+   "outlet": "Buffalo News",
+   "city": "Buffalo",
+   "state": "NY",
+   "market": "Buffalo, NY DMA",
+   "reach": 3800000,
+   "date": "09/01/26",
+   "url": "https://buffalonews.com/online_features/fashion_beauty_fitness/article_cce1d58e-6c2a-53ab-8da5-f66f8ca20031.html"
+  },
+  {
+   "outlet": "International Business Times",
+   "city": "New York",
+   "state": "NY",
+   "market": "New York, NY",
+   "reach": 3610000,
+   "date": "09/01/26",
+   "url": "https://markets.financialcontent.com/ibtimes/article/newsusa-2026-8-24-why-inclusive-fitness-is-about-more-than-exercise"
+  },
+  {
+   "outlet": "NewsOK",
+   "city": "Oklahoma City",
+   "state": "OK",
+   "market": "Oklahoma City DMA",
+   "reach": 3347000,
+   "date": "09/01/26",
+   "url": "http://markets.financialcontent.com/newsok/article/newsusa-2026-8-24-why-inclusive-fitness-is-about-more-than-exercise"
+  },
+  {
+   "outlet": "Madison",
+   "city": "Madison",
+   "state": "WI",
+   "market": "Madison, WI DMA",
+   "reach": 3030000,
+   "date": "09/01/26",
+   "url": "https://madison.com/online_features/fashion_beauty_fitness/article_634aa3f9-00b5-561a-8e9a-af8cb9712359.html"
+  },
+  {
+   "outlet": "StreetInsider.com",
+   "city": "Birmingham",
+   "state": "MI",
+   "market": "Detroit, MI DMA",
+   "reach": 2934000,
+   "date": "09/01/26",
+   "url": "https://markets.financialcontent.com/streetinsider/article/newsusa-2026-8-24-why-inclusive-fitness-is-about-more-than-exercise"
+  },
+  {
+   "outlet": "Lincoln Journal Star",
+   "city": "Lincoln",
+   "state": "NE",
+   "market": "Lincoln-Hastings-Kearney, NE DMA",
+   "reach": 2370000,
+   "date": "09/01/26",
+   "url": "https://journalstar.com/online_features/fashion_beauty_fitness/article_f458bfc7-eb06-573c-b9ec-138225a7b923.html"
+  },
+  {
+   "outlet": "Northwest Indiana Times",
+   "city": "Munster",
+   "state": "IN",
+   "market": "Chicago, IL DMA",
+   "reach": 2100000,
+   "date": "09/01/26",
+   "url": "https://nwitimes.com/online_features/fashion_beauty_fitness/article_c53c1c57-15d1-5bef-addc-1c11679c3987.html"
+  },
+  {
+   "outlet": "Arizona Daily Star",
+   "city": "Tucson",
+   "state": "AZ",
+   "market": "Tucson-Sierra Vista DMA",
+   "reach": 1960000,
+   "date": "09/01/26",
+   "url": "https://tucson.com/online_features/fashion_beauty_fitness/article_2b3e11c7-6df5-581d-9441-4db7ae311d1d.html"
+  },
+  {
+   "outlet": "The News-Gazette",
+   "city": "Champaign",
+   "state": "IL",
+   "market": "Champaign-Springfield-Decatur, IL DMA",
+   "reach": 1160000,
+   "date": "09/01/26",
+   "url": "https://www.news-gazette.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_28fd5413-9e25-599e-b23a-95441d6bf3cd.html"
+  },
+  {
+   "outlet": "Billings Gazette",
+   "city": "Billings",
+   "state": "MT",
+   "market": "Billings, MT DMA",
+   "reach": 1130000,
+   "date": "09/01/26",
+   "url": "https://billingsgazette.com/online_features/fashion_beauty_fitness/article_29d256ce-61d1-5faf-9d28-5f1598db33b9.html"
+  },
+  {
+   "outlet": "The Pantagraph",
+   "city": "Bloomington",
+   "state": "IL",
+   "market": "Peoria-Bloomington, IL",
+   "reach": 1060000,
+   "date": "09/01/26",
+   "url": "https://pantagraph.com/online_features/fashion_beauty_fitness/article_1951da04-4c92-5455-b073-450798f98f6d.html"
+  },
+  {
+   "outlet": "Washington City Paper",
+   "city": "Washington",
+   "state": "DC",
+   "market": "Washington, DC (Hagerstown, MD) DMA",
+   "reach": 946951,
+   "date": "09/01/26",
+   "url": "http://pr.washingtoncitypaper.com/article/Why-Inclusive-Fitness-Is-About-More-Than-Exercise/6a8c75db00dcc60002107dfc"
+  },
+  {
+   "outlet": "The Berkshire Eagle",
+   "city": "Pittsfield",
+   "state": "MA",
+   "market": "Albany-Schenectady-Troy DMA",
+   "reach": 875514,
+   "date": "09/01/26",
+   "url": "https://www.berkshireeagle.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_b635a286-c587-52ba-a7ea-e14bf614495a.html"
+  },
+  {
+   "outlet": "Waterloo-Cedar Falls Courier",
+   "city": "Waterloo",
+   "state": "IA",
+   "market": "Cedar Rapids-Waterloo-Iowa City-Dubuque DMA",
+   "reach": 858030,
+   "date": "09/01/26",
+   "url": "https://wcfcourier.com/online_features/fashion_beauty_fitness/article_ba2f9268-9377-5442-9839-7f533da8f88c.html"
+  },
+  {
+   "outlet": "Rapid City Journal",
+   "city": "Rapid City",
+   "state": "SD",
+   "market": "Rapid City, SD DMA",
+   "reach": 827250,
+   "date": "09/01/26",
+   "url": "https://rapidcityjournal.com/online_features/fashion_beauty_fitness/article_d28b5fd8-37de-569a-bae5-05ffdab90834.html"
+  },
+  {
+   "outlet": "Local 3 News",
+   "city": "Chattanooga",
+   "state": "TN",
+   "market": "Chattanooga, TN DMA",
+   "reach": 807062,
+   "date": "10/19/26",
+   "url": "https://www.local3news.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_171dae6c-cee3-5dc3-b4c8-b663de97380b.html"
+  },
+  {
+   "outlet": "WV News",
+   "city": "Clarksburg",
+   "state": "WV",
+   "market": "Clarksburg-Weston, WV DMA",
+   "reach": 770985,
+   "date": "09/01/26",
+   "url": "https://www.wvnews.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_bada7cff-36f7-56e4-b431-d4f447a63499.html"
+  },
+  {
+   "outlet": "Inside NoVa",
+   "city": "Woodbridge",
+   "state": "VA",
+   "market": "Washington, DC DMA",
+   "reach": 744976,
+   "date": "09/01/26",
+   "url": "https://www.insidenova.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_eef8e552-26df-56e6-b8a9-66b39cfc089b.html"
+  },
+  {
+   "outlet": "The Quad City Times",
+   "city": "Davenport",
+   "state": "IA",
+   "market": "Davenport, IA-Rock Island-Moline, IL DMA",
+   "reach": 726740,
+   "date": "09/01/26",
+   "url": "https://qctimes.com/online_features/fashion_beauty_fitness/article_eeebaa42-7b04-5b98-9a9f-3c07b48f2fcd.html"
+  },
+  {
+   "outlet": "Killeen Daily Herald",
+   "city": "Killeen",
+   "state": "TX",
+   "market": "Waco-Temple-Bryan, TX DMA",
+   "reach": 724518,
+   "date": "09/01/26",
+   "url": "https://kdhnews.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_f79bc42c-8fa5-5163-b865-b92cb4d3ac96.html"
+  },
+  {
+   "outlet": "The Missoulian",
+   "city": "Missoula",
+   "state": "MT",
+   "market": "Missoula, MT DMA",
+   "reach": 707880,
+   "date": "09/01/26",
+   "url": "https://missoulian.com/online_features/fashion_beauty_fitness/article_9507ff1f-81ec-5b1b-b7fc-9ec435a9b6dd.html"
+  },
+  {
+   "outlet": "The Journal Times",
+   "city": "Racine",
+   "state": "WI",
+   "market": "Milwaukee DMA",
+   "reach": 672580,
+   "date": "09/01/26",
+   "url": "https://journaltimes.com/online_features/fashion_beauty_fitness/article_146d7f61-e41f-5e11-a533-d03111b6e902.html"
+  },
+  {
+   "outlet": "La Crosse Tribune",
+   "city": "La Crosse",
+   "state": "WI",
+   "market": "La Crosse-Eau Claire, WI DMA",
+   "reach": 667200,
+   "date": "09/01/26",
+   "url": "https://lacrossetribune.com/online_features/fashion_beauty_fitness/article_d3195669-8419-5b0f-948b-0a5c5576a45f.html"
+  },
+  {
+   "outlet": "The Post Star",
+   "city": "Glen Falls",
+   "state": "NY",
+   "market": "Albany-Schenectady-Troy DMA",
+   "reach": 654150,
+   "date": "09/01/26",
+   "url": "https://poststar.com/online_features/fashion_beauty_fitness/article_1ad789f6-3e6f-524e-83dd-8a164d60871f.html"
+  },
+  {
+   "outlet": "Gwinnett Daily Post",
+   "city": "Lawrenceville",
+   "state": "GA",
+   "market": "Atlanta, GA DMA",
+   "reach": 610171,
+   "date": "09/01/26",
+   "url": "https://www.gwinnettdailypost.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_6226fb36-f8c0-509b-bce4-7d2580fbc916.html"
+  },
+  {
+   "outlet": "Daily Gazette",
+   "city": "Schenectady",
+   "state": "NY",
+   "market": "Albany-Schenectady-Troy, NY DMA",
+   "reach": 601470,
+   "date": "10/11/26",
+   "url": "https://www.dailygazette.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_f1564f56-f168-5b8d-bb90-eb024587aeca.html"
+  },
+  {
+   "outlet": "Loudoun Now",
+   "city": "Leesburg",
+   "state": "VA",
+   "market": "Washington, DC (Hagerstown, MD) DMA",
+   "reach": 504499,
+   "date": "10/06/26",
+   "url": "https://www.loudounnow.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_df867166-f31c-5afc-a76f-e6c0adde6645.html"
+  },
+  {
+   "outlet": "Auburn Citizen",
+   "city": "Auburn",
+   "state": "IL",
+   "market": "CHAMPAIGN & SPRINGFIELD-DECATUR DMA",
+   "reach": 488088,
+   "date": "09/01/26",
+   "url": "https://auburnpub.com/online_features/fashion_beauty_fitness/article_ec6fa258-3255-5e3a-a3e3-f3b0c9afcefa.html"
+  },
+  {
+   "outlet": "Bismarck Tribune",
+   "city": "Bismarck",
+   "state": "ND",
+   "market": "Minot-Bismarck-Dickinson (Williston) DMA",
+   "reach": 487380,
+   "date": "09/01/26",
+   "url": "https://bismarcktribune.com/online_features/fashion_beauty_fitness/article_1d26f737-e7c2-5e55-a80f-8b613c1f90e9.html"
+  },
+  {
+   "outlet": "Sioux City Journal",
+   "city": "Sioux City",
+   "state": "IA",
+   "market": "Sioux City, IA DMA",
+   "reach": 480567,
+   "date": "09/01/26",
+   "url": "https://siouxcityjournal.com/online_features/fashion_beauty_fitness/article_6102cf25-b0d3-5399-b821-4bb8cf91aaf0.html"
+  },
+  {
+   "outlet": "Sun Newspapers",
+   "city": "Venice",
+   "state": "FL",
+   "market": "Tampa-St. Petersburg (Sarasota) DMA",
+   "reach": 460812,
+   "date": "10/11/26",
+   "url": "https://www.yoursun.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_f91049e8-3969-5fad-a322-5841e850f92c.html"
+  },
+  {
+   "outlet": "Kenosha News",
+   "city": "Kenosha",
+   "state": "WI",
+   "market": "Chicago, IL DMA",
+   "reach": 446523,
+   "date": "09/01/26",
+   "url": "https://kenoshanews.com/online_features/fashion_beauty_fitness/article_ceb2f25f-1b66-512c-9a65-24470c2c9c36.html"
+  },
+  {
+   "outlet": "The Daily News",
+   "city": "Longview",
+   "state": "WA",
+   "market": "Portland, OR DMA",
+   "reach": 430000,
+   "date": "09/01/26",
+   "url": "https://tdn.com/online_features/fashion_beauty_fitness/article_f72648fa-390c-5fa9-8497-aafe2eea9ae4.html"
+  },
+  {
+   "outlet": "Helena Independent Record",
+   "city": "Helena",
+   "state": "MT",
+   "market": "Butte-Bozeman-Helena",
+   "reach": 403626,
+   "date": "09/01/26",
+   "url": "https://helenair.com/online_features/fashion_beauty_fitness/article_2da0f9fb-6993-5b1b-b8ed-fb09848a3db2.html"
+  },
+  {
+   "outlet": "News-Press & Gazette Co.",
+   "city": "St. Joseph",
+   "state": "MO",
+   "market": "Kansas City, KS-MO DMA",
+   "reach": 403370,
+   "date": "09/01/26",
+   "url": "https://www.newspressnow.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_304ddfbb-388f-5a66-8416-cb3675ad7b58.html"
+  },
+  {
+   "outlet": "Rockford Register Star",
+   "city": "Rockford",
+   "state": "IL",
+   "market": "Rockford, IL DMA",
+   "reach": 402263,
+   "date": "09/01/26",
+   "url": "https://markets.financialcontent.com/gatehouse.rrstar/article/newsusa-2026-8-24-why-inclusive-fitness-is-about-more-than-exercise"
+  },
+  {
+   "outlet": "News Daytona Beach",
+   "city": "Daytona Beach",
+   "state": "FL",
+   "market": "Miami-Ft. Lauderdale, FL DMA",
+   "reach": 399300,
+   "date": "09/01/26",
+   "url": "https://www.newsdaytonabeach.com/stories/why-inclusive-fitness-is-about-more-than-exercise,175208"
+  },
+  {
+   "outlet": "The Galveston County Daily News",
+   "city": "Galveston",
+   "state": "TX",
+   "market": "Houston, TX DMA",
+   "reach": 394815,
+   "date": "09/01/26",
+   "url": "https://www.galvnews.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_e7d3fef0-5bd4-59af-aab7-794af39786f0.html"
+  },
+  {
+   "outlet": "Sun Chronicle",
+   "city": "Attleboro",
+   "state": "MA",
+   "market": "Providence-New Bedford DMA",
+   "reach": 390363,
+   "date": "09/01/26",
+   "url": "https://www.thesunchronicle.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_453f7385-3af5-53f3-9524-82b483ce1b19.html"
+  },
+  {
+   "outlet": "Wyoming Tribune Eagle",
+   "city": "Cheyenne",
+   "state": "WY",
+   "market": "Cheyenne-Scottsbluff DMA",
+   "reach": 387894,
+   "date": "10/15/26",
+   "url": "https://www.wyomingnews.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_3f0ae48d-5325-5868-866d-752dfdf8a399.html"
+  },
+  {
+   "outlet": "Janesville Gazette",
+   "city": "Janesville",
+   "state": "WI",
+   "market": "Madison, WI DMA",
+   "reach": 383164,
+   "date": "09/01/26",
+   "url": "https://www.gazettextra.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_869610c3-a28c-599a-8032-e6b967795a26.html"
+  },
+  {
+   "outlet": "Telegraph Herald",
+   "city": "Dubuque",
+   "state": "IA",
+   "market": "Cedar Rapids-Waterloo-Iowa City-Dubuque DMA",
+   "reach": 371868,
+   "date": "11/03/26",
+   "url": "https://www.telegraphherald.com/online_features/fashion_beauty_fitness/article_44c3af92-55ed-5ea6-b102-e2e12c987c50.html"
+  },
+  {
+   "outlet": "Concord Monitor",
+   "city": "Concord",
+   "state": "NH",
+   "market": "NH Non-Metropolitan Area",
+   "reach": 370870,
+   "date": "09/01/26",
+   "url": "https://markets.financialcontent.com/concordmonitor/article/newsusa-2026-8-24-why-inclusive-fitness-is-about-more-than-exercise"
+  },
+  {
+   "outlet": "Northeast Mississippi Daily Journal",
+   "city": "Tupelo",
+   "state": "MS",
+   "market": "Columbus-Tupelo-West Point-Houston, MS DMA",
+   "reach": 365630,
+   "date": "09/01/26",
+   "url": "https://www.djournal.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_04fffc71-e0e2-5218-b300-1f474800ea78.html"
+  },
+  {
+   "outlet": "Arizona Daily Sun",
+   "city": "Flagstaff",
+   "state": "AZ",
+   "market": "Phoenix (Prescott) DMA",
+   "reach": 361733,
+   "date": "09/01/26",
+   "url": "https://azdailysun.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_8643f510-94d5-581f-9e7f-e6d548f7ec2f.html"
+  },
+  {
+   "outlet": "The Virgin Islands Daily News",
+   "city": "St. Thomas",
+   "state": "VI",
+   "market": "VI Non-metropolitan Area",
+   "reach": 355644,
+   "date": "09/01/26",
+   "url": "https://www.virginislandsdailynews.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_36538cb1-a6d4-516e-8950-e7b334ee7ef6.html"
+  },
+  {
+   "outlet": "Mason City Globe-Gazette",
+   "city": "Mason City",
+   "state": "IA",
+   "market": "Rochester, MN-Mason City, IA-Austin, MN DMA",
+   "reach": 353016,
+   "date": "09/01/26",
+   "url": "https://globegazette.com/online_features/fashion_beauty_fitness/article_16a8e931-c848-5f5f-a979-64ec396c009d.html"
+  },
+  {
+   "outlet": "Fairbanks Daily News-Miner",
+   "city": "Fairbanks",
+   "state": "AK",
+   "market": "Fairbanks, AK DMA",
+   "reach": 352870,
+   "date": "09/01/26",
+   "url": "https://www.newsminer.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_55b39480-810d-540e-b759-df66e3a35a5f.html"
+  },
+  {
+   "outlet": "Hometown Source",
+   "city": "Coon Rapids",
+   "state": "MN",
+   "market": "Minneapolis-St. Paul, MN DMA",
+   "reach": 342351,
+   "date": "11/01/26",
+   "url": "https://www.hometownsource.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_88920e93-d532-52a5-bd90-19e89d2504ad.html"
+  },
+  {
+   "outlet": "The Eau Claire Leader Telegram",
+   "city": "Eau Claire",
+   "state": "WI",
+   "market": "La Crosse-Eau Claire, WI DMA",
+   "reach": 340950,
+   "date": "09/18/26",
+   "url": "https://www.leadertelegram.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_b15dd0ec-2b39-58fb-8acb-c229dd80760a.html"
+  },
+  {
+   "outlet": "The Times-News",
+   "city": "Burlington",
+   "state": "NC",
+   "market": "Greensboro-High Point-Winston Salem DMA",
+   "reach": 337040,
+   "date": "09/01/26",
+   "url": "https://www.thetimesnews.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_8172096f-4c45-5c28-ac09-19f02f765dd5.html"
+  },
+  {
+   "outlet": "Charleston Gazette-Mail",
+   "city": "Charleston",
+   "state": "WV",
+   "market": "Charleston, WV DMA",
+   "reach": 324036,
+   "date": "09/24/26",
+   "url": "https://www.wvgazettemail.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_5609df77-20e3-5771-bca7-2499ebce8439.html"
+  },
+  {
+   "outlet": "North Country Now / This Week",
+   "city": "Potsdam",
+   "state": "NY",
+   "market": "Watertown, NY DMA",
+   "reach": 304646,
+   "date": "09/01/26",
+   "url": "https://www.northcountrynow.com/stories/why-inclusive-fitness-is-about-more-than-exercise,387424"
+  },
+  {
+   "outlet": "WiscNews",
+   "city": "Madison",
+   "state": "WI",
+   "market": "Madison, WI DMA",
+   "reach": 302070,
+   "date": "09/01/26",
+   "url": "https://wiscnews.com/online_features/fashion_beauty_fitness/article_bf3d77ee-4851-5473-9cb4-3883de938ee5.html"
+  },
+  {
+   "outlet": "Laconia Daily Sun",
+   "city": "Laconia",
+   "state": "NH",
+   "market": "Boston, MA (Manchester, NH) DMA",
+   "reach": 298104,
+   "date": "10/26/26",
+   "url": "https://www.laconiadailysun.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_ac558f69-7e35-5ab9-8b6a-add49bbcafbe.html"
+  },
+  {
+   "outlet": "Loudoun Times",
+   "city": "Leesburg",
+   "state": "VA",
+   "market": "Washington, DC (Hagerstown, MD) DMA",
+   "reach": 296571,
+   "date": "09/01/26",
+   "url": "https://www.loudountimes.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_28db6185-d915-5aa6-b5c9-8f076c76bfd7.html"
+  },
+  {
+   "outlet": "Napa Valley Register",
+   "city": "Napa",
+   "state": "CA",
+   "market": "San Francisco-Oakland-San Jose, CA DMA",
+   "reach": 294840,
+   "date": "09/01/26",
+   "url": "https://napavalleyregister.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_9c06e917-d18b-5768-bce8-662a4ea69f8f.html"
+  },
+  {
+   "outlet": "Rome News-Tribune",
+   "city": "Rome",
+   "state": "GA",
+   "market": "Atlanta, GA DMA",
+   "reach": 294130,
+   "date": "11/04/26",
+   "url": "https://www.northwestgeorgianews.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_170e70c1-7695-5b5a-ad35-a35fb6123bde.html"
+  },
+  {
+   "outlet": "Winchester Star",
+   "city": "Winchester",
+   "state": "VA",
+   "market": "Washington, DC (Hagerstown) DMA",
+   "reach": 292511,
+   "date": "09/01/26",
+   "url": "https://www.winchesterstar.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_96636be4-ded1-5a22-9624-7aab39f6768a.html"
+  },
+  {
+   "outlet": "The Indiana Gazette Online",
+   "city": "Indiana",
+   "state": "PA",
+   "market": "Pittsburgh, PA DMA",
+   "reach": 291496,
+   "date": "09/01/26",
+   "url": "https://www.indianagazette.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_db321507-327f-59f5-b64f-2571d6b38d35.html"
+  },
+  {
+   "outlet": "The Times and Democrat",
+   "city": "Orangeburg",
+   "state": "SC",
+   "market": "Columbia, SC DMA",
+   "reach": 291494,
+   "date": "09/01/26",
+   "url": "https://thetandd.com/online_features/fashion_beauty_fitness/article_fbe2d3ba-e523-56cd-b1dc-142e03b58e26.html"
+  },
+  {
+   "outlet": "Greater Milwaukee Today",
+   "city": "Beaver Dam",
+   "state": "WI",
+   "market": "Milwaukee DMA",
+   "reach": 288633,
+   "date": "09/18/26",
+   "url": "https://www.gmtoday.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_78e04de7-9c68-5a61-9da9-050042949b07.html"
+  },
+  {
+   "outlet": "The Daily Herald",
+   "city": "McDonough",
+   "state": "GA",
+   "market": "Atlanta, GA DMA",
+   "reach": 286725,
+   "date": "09/01/26",
+   "url": "https://www.henryherald.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_0c0234b7-116d-5c61-9318-a22385c76a7a.html"
+  },
+  {
+   "outlet": "The Montana Standard",
+   "city": "Butte",
+   "state": "MT",
+   "market": "Butte-Bozeman, MT DMA",
+   "reach": 284180,
+   "date": "09/01/26",
+   "url": "https://mtstandard.com/online_features/fashion_beauty_fitness/article_ddb36210-f215-5628-980c-50a35fcdf60c.html"
+  },
+  {
+   "outlet": "The Times-News Online",
+   "city": "Twin Falls",
+   "state": "ID",
+   "market": "Idaho Falls-Pocatello DMA",
+   "reach": 280830,
+   "date": "09/01/26",
+   "url": "https://magicvalley.com/online_features/fashion_beauty_fitness/article_6e7b0b8f-4413-5385-8367-1db3b2cadce7.html"
+  },
+  {
+   "outlet": "Goldsboro News-Argus",
+   "city": "Goldsboro",
+   "state": "NC",
+   "market": "Greenville-New Bern-Washington, NC DMA",
+   "reach": 280000,
+   "date": "09/18/26",
+   "url": "https://www.newsargus.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_325d46bf-8eac-5b9c-aef5-899f411f6d0f.html"
+  },
+  {
+   "outlet": "Casper Star Tribune",
+   "city": "Casper",
+   "state": "WY",
+   "market": "Casper-Riverton DMA",
+   "reach": 273260,
+   "date": "09/01/26",
+   "url": "https://trib.com/online_features/fashion_beauty_fitness/article_fa9b625f-d46e-5696-9fef-054edc071c93.html"
+  },
+  {
+   "outlet": "The Lantern",
+   "city": "Columbus",
+   "state": "OH",
+   "market": "Columbus, OH DMA",
+   "reach": 273000,
+   "date": "09/01/26",
+   "url": "https://www.thelantern.com/classifieds/#http://thelantern.campusave.com/around-town/other-6320/why-inclusive-f-733903708.htm"
+  },
+  {
+   "outlet": "The Herald-Dispatch",
+   "city": "Huntington",
+   "state": "WV",
+   "market": "Huntington-Ashland television DMA",
+   "reach": 261480,
+   "date": "09/01/26",
+   "url": "https://www.herald-dispatch.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_ad08054e-dab1-5387-a12b-ca43600e20c3.html"
+  },
+  {
+   "outlet": "Corvallis Gazette-Times",
+   "city": "Albany",
+   "state": "OR",
+   "market": "Portland, OR DMA",
+   "reach": 261183,
+   "date": "09/01/26",
+   "url": "https://gazettetimes.com/online_features/fashion_beauty_fitness/article_b7979c36-2b84-5431-b336-efec066466ee.html"
+  },
+  {
+   "outlet": "NNY360 (Watertown Daily Times and Northern New York Newspapers)",
+   "city": "Watertown",
+   "state": "NY",
+   "market": "Watertown, NY DMA",
+   "reach": 253190,
+   "date": "09/01/26",
+   "url": "https://www.nny360.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_a1f486f8-6033-54a5-a3bb-4e4750abeae6.html"
+  },
+  {
+   "outlet": "News Daily",
+   "city": "Jonesboro",
+   "state": "GA",
+   "market": "Atlanta, GA DMA",
+   "reach": 252960,
+   "date": "11/04/26",
+   "url": "https://www.news-daily.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_73ccc13d-da99-597f-a9f6-d272311d8ff0.html"
+  },
+  {
+   "outlet": "Decatur Herald & Review",
+   "city": "Decatur",
+   "state": "IL",
+   "market": "CHAMPAIGN & SPRINGFIELD-DECATUR DMA",
+   "reach": 252916,
+   "date": "09/01/26",
+   "url": "https://herald-review.com/online_features/fashion_beauty_fitness/article_74dad124-6c26-54bf-a2ff-7cf8b430c9fc.html"
+  },
+  {
+   "outlet": "Star Local Media",
+   "city": "Plano",
+   "state": "TX",
+   "market": "Dallas-Fort Worth DMA",
+   "reach": 250591,
+   "date": "09/01/26",
+   "url": "https://starlocalmedia.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_4d0f5f6e-9d01-5c05-a6c0-75e18c05917c.html"
+  },
+  {
+   "outlet": "Journal Gazette Online",
+   "city": "Fort Wayne",
+   "state": "IN",
+   "market": "Ft. Wayne, IN DMA",
+   "reach": 246400,
+   "date": "10/29/26",
+   "url": "https://www.journalgazette.net/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_fdecdcc9-0378-5602-abf1-e8868a718a52.html"
+  },
+  {
+   "outlet": "The Detroit Jewish News Foundation",
+   "city": "Farmington Hills",
+   "state": "MI",
+   "market": "Detroit, MI DMA",
+   "reach": 245238,
+   "date": "10/23/26",
+   "url": "https://www.thejewishnews.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_97ca3fc0-e70c-5261-84a5-61c019400417.html"
+  },
+  {
+   "outlet": "Picayune Item",
+   "city": "Picayune",
+   "state": "MS",
+   "market": "New Orleans, LA, DMA",
+   "reach": 234550,
+   "date": "09/01/26",
+   "url": "http://smb.picayuneitem.com/article/Why-Inclusive-Fitness-Is-About-More-Than-Exercise/6a8c75db00dcc60002107dfc"
+  },
+  {
+   "outlet": "The Newnan Times-Herald",
+   "city": "Newnan",
+   "state": "GA",
+   "market": "Atlanta, GA DMA",
+   "reach": 229232,
+   "date": "09/17/26",
+   "url": "https://www.times-herald.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_8caae258-f7ff-58a3-b678-326929b77810.html"
+  },
+  {
+   "outlet": "The Journal",
+   "city": "Martinsburg",
+   "state": "WV",
+   "market": "Washington-Hagerstown DMA",
+   "reach": 227808,
+   "date": "09/01/26",
+   "url": "https://www.journal-news.net/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_ada6d922-3841-575b-b02e-152db37a368b.html"
+  },
+  {
+   "outlet": "Watauga Democrat",
+   "city": "Boone",
+   "state": "NC",
+   "market": "Charlotte, NC DMA",
+   "reach": 226003,
+   "date": "10/06/26",
+   "url": "https://www.wataugademocrat.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_7d32b2c5-3cf0-5f7a-b107-574bd1528c0d.html"
+  },
+  {
+   "outlet": "APG Media of Wisconsin",
+   "city": "Ashland",
+   "state": "WI",
+   "market": "Duluth, MN-Superior, WI DMA",
+   "reach": 224300,
+   "date": "09/01/26",
+   "url": "https://www.apg-wi.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_b5150ab4-c9f4-5a53-b91a-95c2728ffe33.html"
+  },
+  {
+   "outlet": "Lake Expo",
+   "city": "Osage Beach",
+   "state": "MO",
+   "market": "Springfield, MO DMA",
+   "reach": 223974,
+   "date": "09/01/26",
+   "url": "https://www.lakeexpo.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_133c90a5-381c-5c94-af0e-898f98db7e2a.html"
+  },
+  {
+   "outlet": "The Caledonian-Record Online",
+   "city": "St. Johnsbury",
+   "state": "VT",
+   "market": "Burlington-Plattsburgh DMA",
+   "reach": 220558,
+   "date": "09/01/26",
+   "url": "https://www.caledonianrecord.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_2d92f676-f3a2-5d33-a4f6-ab57438a27f4.html"
+  },
+  {
+   "outlet": "Denton Record-Chronicle",
+   "city": "Denton",
+   "state": "TX",
+   "market": "Dallas-Fort Worth DMA",
+   "reach": 218460,
+   "date": "09/01/26",
+   "url": "https://dentonrc.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_abc12f66-3099-5813-97de-832e52048bf0.html"
+  },
+  {
+   "outlet": "Albany Democrat-Herald",
+   "city": "Albany",
+   "state": "OR",
+   "market": "Portland, OR DMA",
+   "reach": 217549,
+   "date": "09/01/26",
+   "url": "https://democratherald.com/online_features/fashion_beauty_fitness/article_e5e4370a-aadd-5280-9b6a-4d73c148a83e.html"
+  },
+  {
+   "outlet": "Daily Northwestern",
+   "city": "Evanston",
+   "state": "IL",
+   "market": "Chicago, IL DMA",
+   "reach": 217070,
+   "date": "09/01/26",
+   "url": "http://dailynorthwestern.com/classifieds/#http://dailynorthwestern.campusave.com/around-town/other-6320/why-inclusive-f-733902683.htm"
+  },
+  {
+   "outlet": "CNHI",
+   "city": "Montgomery",
+   "state": "AL",
+   "market": "Montgomery-Selma DMA",
+   "reach": 216480,
+   "date": "09/01/26",
+   "url": "https://template2.cnhionline.com/online_features/fashion_beauty_fitness/article_de9aa78a-d2e1-5a82-a2d8-4ef77fe9d78e.html"
+  },
+  {
+   "outlet": "The Herald Bulletin",
+   "city": "Anderson",
+   "state": "IN",
+   "market": "Indianapolis, IN DMA",
+   "reach": 216480,
+   "date": "09/01/26",
+   "url": "https://template1.cnhionline.com/online_features/fashion_beauty_fitness/article_a1c79ffe-c262-5584-9b05-62eafb19749d.html"
+  },
+  {
+   "outlet": "Shelbyville Times Gazette",
+   "city": "Shelbyville",
+   "state": "TN",
+   "market": "Nashville DMA",
+   "reach": 214960,
+   "date": "09/01/26",
+   "url": "http://t-g.com/premium/newsusa/stories/why-inclusive-fitness-is-about-more-than-exercise,229668?"
+  },
+  {
+   "outlet": "Rutland Herald",
+   "city": "Rutland",
+   "state": "VT",
+   "market": "Burlington-Plattsburgh DMA",
+   "reach": 211807,
+   "date": "09/01/26",
+   "url": "https://www.rutlandherald.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_a278a1f4-07a2-51ad-b868-8340265400bf.html"
+  },
+  {
+   "outlet": "The Northern Virginia Daily",
+   "city": "Strasburg",
+   "state": "VA",
+   "market": "WASHINGTON, DC (HAGERSTOWN)",
+   "reach": 209560,
+   "date": "09/01/26",
+   "url": "https://www.nvdaily.com/online_features/fashion_beauty_fitness/why-inclusive-fitness-is-about-more-than-exercise/article_632d4d65-fb99-5a46-9848-08e8dadae25d.html"
+  },
+  {
+   "outlet": "Dow Theory Letters",
+   "city": "La Jolla",
+   "state": "CA",
+   "market": "San Diego, CA DMA",
+   "reach": 174210,
+   "date": "09/01/26",
+   "url": "https://markets.financialcontent.com/dowtheoryletters/article/newsusa-2026-8-24-why-inclusive-fitness-is-about-more-than-exercise"
+  },
+  {
+   "outlet": "Wall Street Select",
+   "city": "New York",
+   "state": "NY",
+   "market": "New York, NY DMA",
+   "reach": 174210,
+   "date": "09/01/26",
+   "url": "https://markets.financialcontent.com/wss/article/newsusa-2026-8-24-why-inclusive-fitness-is-about-more-than-exercise"
+  },
+  {
+   "outlet": "Salisbury Post",
+   "city": "Salisbury",
+   "state": "NC",
+   "market": "Charlotte, NC DMA",
+   "reach": 172500,
+   "date": "09/01/26",
+   "url": "http://smb.salisburypost.com/article/Why-Inclusive-Fitness-Is-About-More-Than-Exercise/6a8c75db00dcc60002107dfc"
+  },
+  {
+   "outlet": "Port Arthur News Online",
+   "city": "Port Arthur",
+   "state": "TX",
+   "market": "Beaumont-Port Arthur, TX DMA",
+   "reach": 169700,
+   "date": "09/01/26",
+   "url": "http://smb.panews.com/article/Why-Inclusive-Fitness-Is-About-More-Than-Exercise/6a8c75db00dcc60002107dfc"
+  }
+ ]
+}

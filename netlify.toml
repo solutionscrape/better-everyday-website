@@ -1,0 +1,27 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Static assets are fingerprinted by Vite; cache them hard.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Addresses from the old Squarespace site and the printed speaker one-sheet.
+[[redirects]]
+  from = "/speaking-engagements"
+  to = "/#speaking"
+  status = 301
+[[redirects]]
+  from = "/speaking"
+  to = "/#speaking"
+  status = 301
+[[redirects]]
+  from = "/media"
+  to = "/#media"
+  status = 301

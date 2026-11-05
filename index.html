@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Better Everyday Athletics · Adaptive Coaching with James Anderson, CSCS</title>
+  <meta name="description" content="Adaptive and inclusive strength coaching for kids, adults and seniors of all abilities with James Anderson, CSCS. In person across Boulder County and virtual anywhere.">
+  <meta name="theme-color" content="#101012">
+  <link rel="icon" type="image/png" href="/img/be-mark.png">
+  <meta property="og:title" content="Better Everyday Athletics">
+  <meta property="og:description" content="Strength and confidence for all abilities. Coaching with James Anderson, CSCS.">
+  <meta property="og:image" content="/img/adaptive-soccer-coach-high-five-wheelchair-athlete-boulder.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+</head>
+<body>
+  <!-- Static copies of the contact and speaking forms so Netlify Forms can detect them at build time.
+       The React forms post the same fields to "/" (see src/lib/netlify-forms.js). -->
+  <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input name="bot-field">
+    <input name="name"><input name="email"><input name="phone">
+    <input name="who"><input name="interest"><textarea name="message"></textarea>
+  </form>
+  <form name="speaking" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input name="bot-field">
+    <input name="organization"><input name="orgType"><input name="date"><input name="setting"><input name="location">
+    <input name="audience"><input name="audienceSize"><input name="topic"><input name="format"><input name="budget">
+    <textarea name="message"></textarea><input name="name"><input name="email"><input name="phone">
+  </form>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>

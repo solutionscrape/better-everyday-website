@@ -1,0 +1,18 @@
+:root{
+/* Broadsheet: the system is ruled, not rounded. Square is the default;
+   the pill token is retained only for legacy filter chips. */
+--radius-none:0px;
+--radius-sm:0px;
+--radius-md:0px;
+--radius-lg:0px;
+--radius-xl:0px;
+--radius-pill:999px;
+--radius-card:var(--radius-none);
+--radius-button:var(--radius-none);
+--radius-input:var(--radius-none);
+--radius-media:var(--radius-none);
+
+--border-width-hairline:1px;
+--border-width-strong:2px;
+--rule-accent-width:3px;
+}

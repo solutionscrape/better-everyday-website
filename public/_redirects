@@ -1,0 +1,4 @@
+# Also in netlify.toml; this copy ships inside the build so drag-and-drop uploads get it too.
+/speaking-engagements  /#speaking  301
+/speaking              /#speaking  301
+/media                 /#media     301

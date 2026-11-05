@@ -1,0 +1,50 @@
+:root{
+--font-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+--font-body:"Inter","Helvetica Neue",Arial,sans-serif;
+
+--weight-regular:400;
+--weight-medium:500;
+--weight-semibold:600;
+--weight-bold:700;
+
+/* Display scale — Barlow Condensed, UPPERCASE, 700, +.01em */
+--text-display-size:clamp(3.2rem,8.6vw,7.4rem);
+--text-display-lh:.88;
+--text-h1-size:clamp(2.6rem,6vw,4.9rem);
+--text-h1-lh:.94;
+--text-h2-size:clamp(1.9rem,3.7vw,3.2rem);
+--text-h2-lh:1.02;
+--text-h3-size:clamp(1.3rem,2.2vw,1.8rem);
+--text-h3-lh:1.1;
+--text-h4-size:1.0625rem;
+--text-h4-lh:1.2;
+
+/* Body — Inter */
+--text-lead-size:clamp(1.02rem,1.5vw,1.3rem);
+--text-lead-lh:1.56;
+--text-body-size:1rem;
+--text-body-lh:1.6;
+--text-small-size:.875rem;
+--text-small-lh:1.62;
+
+/* Rail nav, kickers, datelines, captions */
+--text-nav-size:.875rem;
+--text-eyebrow-size:.71875rem;
+--text-eyebrow-lh:1.2;
+--text-caption-size:.6875rem;
+
+/* Tracking */
+--tracking-display:.01em;
+--tracking-heading:.01em;
+--tracking-subhead:.01em;
+--tracking-nav:.07em;
+--tracking-body:0;
+--tracking-button:.08em;
+--tracking-eyebrow:.22em;
+--tracking-caption:.13em;
+
+/* Measure */
+--measure-deck:40ch;
+--measure-body:44ch;
+--measure-headline:16ch;
+}
