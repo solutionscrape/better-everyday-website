@@ -40,16 +40,26 @@ a:hover { color: #00A8F3; }
   .be-rail-foot > a:first-child { width: auto !important; }
 }
 
-/* "As seen in" scrolling strip (src/components/Media.jsx). The list is duplicated so the
-   loop is seamless; it pauses on hover or keyboard focus, and is static for reduced motion. */
+/* "As seen in" ticker (src/components/Media.jsx). Each row's list is duplicated so the loop is
+   seamless; rows pause on hover or keyboard focus, and are static for reduced motion. */
+.be-ticker-row { display: flex; align-items: center; gap: 20px; min-width: 0; }
+.be-ticker-label { flex: 0 0 auto; width: 9.5em; font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--text-muted); }
 .be-marquee-window { overflow: hidden; flex: 1 1 auto; min-width: 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
-.be-marquee-track { display: flex; gap: 40px; width: max-content; margin: 0; padding: 0; list-style: none; animation: be-marquee 60s linear infinite; }
+.be-marquee-track { display: flex; align-items: center; gap: 12px; width: max-content; margin: 0; padding: 0; list-style: none; animation: be-marquee 60s linear infinite; }
+.be-marquee-track.is-reverse { animation-direction: reverse; }
 .be-marquee:hover .be-marquee-track, .be-marquee:focus-within .be-marquee-track { animation-play-state: paused; }
-.be-marquee-item { font-family: var(--font-display); font-weight: 700; font-size: 1.0625rem; letter-spacing: .04em; text-transform: uppercase; color: var(--text-strong); text-decoration: none; box-shadow: none; white-space: nowrap; display: inline-flex; align-items: center; min-height: 36px; }
-.be-marquee-item:hover { color: var(--text-link); }
-@keyframes be-marquee { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 20px)); } }
+.be-ticker-item { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 16px; border: 1px solid var(--border-subtle); background: var(--surface-card); text-decoration: none; box-shadow: none; white-space: nowrap; color: var(--text-strong); transition: border-color var(--duration-fast) var(--ease-standard); }
+.be-ticker-item:hover, .be-ticker-item:focus-visible { border-color: var(--text-link); color: var(--text-strong); }
+.be-ticker-item img { height: 28px; width: auto; max-width: 96px; object-fit: contain; border-radius: 4px; background: #fff; padding: 2px; }
+.be-ticker-name { font-family: var(--font-display); font-weight: 700; font-size: 1rem; letter-spacing: .04em; text-transform: uppercase; }
+.be-ticker-net { font-family: var(--font-display); font-weight: 700; font-size: .6875rem; letter-spacing: .08em; padding: 2px 6px; border: 1px solid currentColor; color: var(--text-muted); }
+@keyframes be-marquee { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 6px)); } }
+@media (max-width: 700px) {
+  .be-ticker-row { flex-direction: column; align-items: stretch; gap: 8px; }
+  .be-ticker-label { width: auto; }
+}
 @media (prefers-reduced-motion: reduce) {
   .be-marquee-window { -webkit-mask-image: none; mask-image: none; }
-  .be-marquee-track { animation: none; flex-wrap: wrap; width: auto; gap: 4px 28px; }
+  .be-marquee-track { animation: none; flex-wrap: wrap; width: auto; gap: 8px; }
   .be-marquee-track > [aria-hidden="true"] { display: none; }
 }

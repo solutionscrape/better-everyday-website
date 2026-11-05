@@ -1,0 +1,34 @@
+# Downloads publisher logos for the "As seen in" ticker and commits them to the branch it runs on.
+# Run it from GitHub → Actions → "Fetch press logos" → Run workflow, after importing a new placement report.
+name: Fetch press logos
+
+on:
+  workflow_dispatch:
+    inputs:
+      refetch:
+        description: Re-download every logo (not just missing ones)
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  logos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run fetch-press-logos -- ${{ inputs.refetch && '--all' || '' }}
+      - name: Commit logos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/img/press src/data/press-logos.json
+          if git diff --cached --quiet; then echo "No new logos."; exit 0; fi
+          git commit -m "Update press logos for the As seen in ticker"
+          git push

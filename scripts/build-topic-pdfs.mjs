@@ -4,7 +4,7 @@
 import { mkdir, readFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
-import { TOPICS, FORMATS } from '../src/data/speaking.js';
+import { TOPICS, FORMATS, SPEAKER, CREDENTIALS } from '../src/data/speaking.js';
 import { CONTACT } from '../src/data/site.js';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
@@ -57,16 +57,18 @@ footer .contact b{color:#1e90d4;font-weight:600}
   <div class="brand"><img src="data:image/png;base64,${logo}" alt=""><span>Better Everyday<br>Athletics</span></div>
   <p class="kick">Topic ${String(i + 1).padStart(2, '0')} · ${esc(t.label)}</p>
   <h1>${esc(t.title)}</h1>
-  <p class="who">James Anderson, CSCS · Speaker · Inclusive fitness coach · Author of Legacy of Health</p>
+  <p class="who">James Anderson · ${esc(SPEAKER.roles)}</p>
 </div><img class="photo" src="data:image/jpeg;base64,${photo}" alt=""></header>
 <main>
   <section>
     <h2>The talk</h2>
     <p>${esc(t.desc)}</p>
-    <h2>What your audience takes away</h2>
+    <h2>Takeaway</h2>
     <ul>${t.takeaways.map((k) => `<li>${esc(k)}</li>`).join('')}</ul>
     <h2>About James</h2>
-    <p>James Anderson is an NSCA Certified Strength &amp; Conditioning Specialist, a former Registered Behavior Technician and the author of <i>Legacy of Health</i>. His work with the Special Olympics of Colorado and his background in behavioral therapy give him a rare depth of understanding when it comes to motivation, adaptation and personal growth.</p>
+    <p>${esc(SPEAKER.about)}</p>
+    <p class="label">Credentials</p>
+    <p>${CREDENTIALS.map(esc).join(' · ')}</p>
   </section>
   <aside>
     <div class="box"><p class="label">Best for</p><p style="margin:0">${esc(t.audience)}</p></div>

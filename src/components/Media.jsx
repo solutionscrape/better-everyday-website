@@ -1,41 +1,63 @@
 // Shared media building blocks used by the business site (Home, Media) and the speaking page.
 import { Button, SectionHeading, SocialLinks, TextLink } from '../ds';
 import { metaLabel, h3Style } from './ui.jsx';
-import { MEDIA, formatDate, localPlacements, nationalPlacements, seenIn } from '../data/media.js';
+import { MEDIA, formatDate, localPlacements, logoFor, nationalPlacements, seenIn } from '../data/media.js';
 import { SOCIALS } from '../data/social.js';
 
 const isExternal = (href) => /^https?:/.test(href);
 const linkProps = (href) => (isExternal(href) ? { target: '_blank', rel: 'noopener noreferrer' } : {});
 const NewTab = ({ href }) => (isExternal(href) ? <span className="visually-hidden"> (opens in a new tab)</span> : null);
 
+/** Network tag from an outlet name, e.g. "KHQ-TV (NBC)" → "NBC". */
+const networkOf = (name) => (name.match(/\((ABC|NBC|CBS|FOX|CW|PBS)[^)]*\)/) || name.match(/\b(ABC|NBC|CBS|FOX|CW|PBS)\b/) || [])[1] || null;
+const stripNetwork = (name) => name.replace(/\s*\((ABC|NBC|CBS|FOX|CW|PBS)[^)]*\)/, '');
+
+/** One outlet in a ticker: the publisher's logo when we have it, otherwise a name badge. */
+function TickerItem({ p, hidden }) {
+  const logo = logoFor(p.outlet);
+  const network = networkOf(p.outlet);
+  return (
+    <li aria-hidden={hidden || undefined}>
+      <a href={p.url} target="_blank" rel="noopener noreferrer" tabIndex={hidden ? -1 : undefined} className={'be-ticker-item' + (logo ? ' has-logo' : '')} title={p.outlet + (p.city ? ' · ' + p.city + ', ' + p.state : '')}>
+        {logo ? <img src={logo} alt="" loading="lazy" decoding="async" /> : null}
+        <span className="be-ticker-name">{stripNetwork(p.outlet)}</span>
+        {network ? <span className="be-ticker-net">{network}</span> : null}
+        {!hidden ? <span className="visually-hidden"> ({p.city ? p.city + ', ' + p.state + '; ' : ''}opens in a new tab)</span> : null}
+      </a>
+    </li>
+  );
+}
+
+/** One scrolling row. Duration scales with length so every row moves at the same speed. */
+function TickerRow({ label, outlets, reverse = false }) {
+  return (
+    <div className="be-ticker-row">
+      {label ? <span className="be-ticker-label">{label}</span> : null}
+      <div className="be-marquee-window">
+        <ul className={'be-marquee-track' + (reverse ? ' is-reverse' : '')} style={{ animationDuration: Math.max(30, outlets.length * 3.2) + 's' }}>
+          {outlets.map((p) => <TickerItem key={'a-' + p.outlet} p={p} />)}
+          {outlets.map((p) => <TickerItem key={'b-' + p.outlet} p={p} hidden />)}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
 /**
- * Scrolling "As seen in" strip. Each outlet links to the placement itself.
+ * Scrolling "As seen in" ticker. Each outlet links to the placement itself.
  * Pauses on hover and focus, and stays still for people who prefer reduced motion.
+ * rows: [{ scope: 'local' | 'national' | 'broadcast', label }]
  */
-export function AsSeenIn({ scope = 'local', label = 'As seen in', note }) {
-  const outlets = seenIn(scope);
-  if (!outlets.length) return null;
-  const items = (hidden) =>
-    outlets.map((p) => (
-      <li key={(hidden ? 'b-' : 'a-') + p.outlet} aria-hidden={hidden || undefined}>
-        <a href={p.url} target="_blank" rel="noopener noreferrer" tabIndex={hidden ? -1 : undefined} className="be-marquee-item">
-          {p.outlet}
-          {!hidden ? <span className="visually-hidden"> ({p.city}, {p.state}; opens in a new tab)</span> : null}
-        </a>
-      </li>
-    ));
+export function AsSeenIn({ scope = 'local', rows, label = 'As seen in', note }) {
+  const list = (rows || [{ scope }]).map((r) => ({ ...r, outlets: seenIn(r.scope) })).filter((r) => r.outlets.length);
+  if (!list.length) return null;
   return (
     <section aria-label={label} className="be-marquee" style={{ borderTop: '1px solid var(--border-strong)', borderBottom: '1px solid var(--border-strong)' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '24px', padding: '14px var(--gutter)' }}>
-        <span style={{ ...metaLabel, color: '#FF4D4D', flex: '0 0 auto' }}>{label}</span>
-        <div className="be-marquee-window">
-          <ul className="be-marquee-track">
-            {items(false)}
-            {items(true)}
-          </ul>
-        </div>
+      <div style={{ display: 'grid', gap: '10px', padding: '16px var(--gutter)' }}>
+        <span style={{ ...metaLabel, color: '#FF4D4D' }}>{label}</span>
+        {list.map((r, i) => <TickerRow key={r.scope} label={r.label} outlets={r.outlets} reverse={i % 2 === 1} />)}
       </div>
-      {note ? <p style={{ margin: 0, padding: '0 var(--gutter) 14px', fontSize: '.8125rem', lineHeight: 1.6, color: '#8a93a0' }}>{note}</p> : null}
+      {note ? <p style={{ margin: 0, padding: '0 var(--gutter) 16px', fontSize: '.8125rem', lineHeight: 1.6, color: '#8a93a0' }}>{note}</p> : null}
     </section>
   );
 }

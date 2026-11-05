@@ -6,7 +6,7 @@ import { AsSeenIn, MediaList, VideoEmbed } from '../components/Media.jsx';
 import { Bullet, LinkButton, h2Style, h3Style, metaLabel } from '../components/ui.jsx';
 import { CONTACT, IMG, isEmail } from '../data/site.js';
 import {
-  AUDIENCES, AUDIENCE_OPTIONS, BUDGET_OPTIONS, FORMATS, FORMAT_OPTIONS, NOW_BOOKING, ORG_OPTIONS,
+  AUDIENCE_OPTIONS, CREDENTIALS, IDEAL_AUDIENCES, SPEAKER, BUDGET_OPTIONS, FORMATS, FORMAT_OPTIONS, NOW_BOOKING, ORG_OPTIONS,
   SCHEDULE, SETTING_OPTIONS, SPEAKING_FACTS, TOPICS,
 } from '../data/speaking.js';
 import { formatDate } from '../data/media.js';
@@ -35,16 +35,14 @@ function Intro() {
         height="clamp(320px,40vw,560px)"
       />
       <section style={{ padding: 'clamp(36px,5vw,72px) var(--gutter) clamp(28px,3.6vw,50px)' }}>
-        <Eyebrow style={{ marginBottom: 'clamp(16px,2.4vw,28px)' }}>Speaking · Available nationwide</Eyebrow>
+        <Eyebrow style={{ marginBottom: 'clamp(16px,2.4vw,28px)' }}>James Anderson · {SPEAKER.roles}</Eyebrow>
         <h1 style={{ margin: 0, fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'var(--text-display-size)', lineHeight: 'var(--text-display-lh)', letterSpacing: 'var(--tracking-display)', textTransform: 'uppercase', color: 'var(--text-strong)', textWrap: 'balance' }}>
-          James Anderson, <span style={{ color: 'var(--be-red)' }}>CSCS</span>
+          Making Fitness Accessible to <span style={{ color: 'var(--be-red)' }}>Every Body</span>
         </h1>
         <div className="be-stack-sm" style={{ display: 'grid', gridTemplateColumns: 'repeat(12,1fr)', gap: 'var(--space-5)', marginTop: 'clamp(24px,3.2vw,40px)', borderTop: '1px solid var(--border-strong)', paddingTop: 'var(--space-5)' }}>
           <div style={{ gridColumn: 'span 7', display: 'grid', gap: '14px' }}>
-            <span style={{ ...metaLabel, color: 'var(--text-strong)' }}>Speaker · Inclusive fitness coach · Author of Legacy of Health</span>
-            <p style={{ ...bodyP, maxWidth: '56ch' }}>
-              James is a Certified Strength &amp; Conditioning Specialist and former Registered Behavior Technician who coaches people of all abilities. He helps nonprofits and behavioral and physical health providers serve clients with special needs through movement, and challenges graduating classes to build a life around purpose and passion rather than money.
-            </p>
+            <span style={{ ...metaLabel, color: 'var(--text-strong)' }}>About James</span>
+            <p style={{ ...bodyP, maxWidth: '60ch' }}>{SPEAKER.about}</p>
           </div>
           <div style={{ gridColumn: 'span 5', display: 'flex', gap: '16px 24px', alignItems: 'center', flexWrap: 'wrap', alignContent: 'flex-start' }}>
             <Button size="lg" href={REQUEST}>Invite James to speak</Button>
@@ -53,23 +51,31 @@ function Intro() {
         </div>
       </section>
       <StatRow items={SPEAKING_FACTS} style={{ borderTop: '1px solid var(--border-strong)' }} />
-      <AsSeenIn scope="national" label="As seen in" note="James’s feature “Why Inclusive Fitness Is About More Than Exercise” ran in 2,622 news outlets across all 50 states." />
+      <AsSeenIn
+        label="As seen in · syndicated coverage"
+        rows={[{ scope: 'broadcast', label: 'On air' }, { scope: 'national', label: 'In print & online' }]}
+        note="James’s feature “Why Inclusive Fitness Is About More Than Exercise” was syndicated to 2,622 outlets, including TV stations and newspapers in all 50 states. Select any outlet to see the placement."
+      />
     </>
   );
 }
 
-function WhoHeHelps() {
+function CredentialsAudiences() {
+  const tag = { display: 'inline-flex', alignItems: 'center', minHeight: '36px', padding: '0 14px', border: '1px solid var(--border-subtle)', fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '.875rem', letterSpacing: 'var(--tracking-button)', textTransform: 'uppercase', color: 'var(--text-strong)' };
   return (
     <section id="speaking-audiences" style={{ padding: 'var(--section-y) var(--gutter) 0' }}>
-      <SectionHeading number="Sect. 01" title="Who James helps" note="Three kinds of rooms, one message: everyone deserves the chance to get a little better every day." />
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(280px,100%),1fr))', gap: 'clamp(24px,3vw,48px)', paddingTop: '32px' }}>
-        {AUDIENCES.map((a) => (
-          <div key={a.title} style={{ display: 'grid', gap: '14px', alignContent: 'start', borderTop: '3px solid #FC1111', paddingTop: '20px' }}>
-            <h3 style={h3Style}>{a.title}</h3>
-            <p style={{ margin: 0, lineHeight: 1.66, color: 'var(--text-body)', textWrap: 'pretty' }}>{a.desc}</p>
-            <span style={{ fontSize: '.875rem', lineHeight: 1.6, color: '#8a93a0' }}>{a.examples}</span>
-          </div>
-        ))}
+      <SectionHeading number="Sect. 01" title="Credentials & audiences" />
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(300px,100%),1fr))', gap: 'clamp(24px,4vw,64px)', paddingTop: '32px' }}>
+        <div style={{ display: 'grid', gap: '14px', alignContent: 'start', borderTop: '3px solid #FC1111', paddingTop: '20px' }}>
+          <h3 style={h3Style}>Credentials & experience</h3>
+          <div style={{ display: 'grid', gap: '10px' }}>{CREDENTIALS.map((c) => <Bullet key={c}>{c}</Bullet>)}</div>
+        </div>
+        <div style={{ display: 'grid', gap: '14px', alignContent: 'start', borderTop: '3px solid #1E90D4', paddingTop: '20px' }}>
+          <h3 style={h3Style}>Ideal audiences</h3>
+          <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+            {IDEAL_AUDIENCES.map((a) => <li key={a} style={tag}>{a}</li>)}
+          </ul>
+        </div>
       </div>
     </section>
   );
@@ -78,7 +84,7 @@ function WhoHeHelps() {
 function Topics() {
   return (
     <section id="speaking-topics" style={{ padding: 'var(--section-y) var(--gutter)' }}>
-      <SectionHeading number="Sect. 02" title="Three topics" note="Every talk is shaped around the people in the room. Download a topic sheet to share with your team." />
+      <SectionHeading number="Sect. 02" title="Signature speaking topics" note="Every talk is shaped around the people in the room. Download a topic sheet to share with your team." />
       {TOPICS.map((t, i) => (
         <div key={t.id} id={'topic-' + t.id} className="be-program-row" style={{ display: 'grid', gridTemplateColumns: 'auto minmax(0,1.3fr) minmax(0,.8fr)', gap: 'clamp(14px,2.4vw,38px)', alignItems: 'start', padding: 'clamp(24px,3vw,40px) 0', borderBottom: '1px solid var(--border-subtle)' }}>
           <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(1.3rem,2.3vw,1.9rem)', lineHeight: 1, color: '#FF4D4D' }}>{String(i + 1).padStart(2, '0')}</span>
@@ -89,7 +95,7 @@ function Topics() {
             <span style={{ fontSize: '.875rem', lineHeight: 1.6, color: '#8a93a0' }}>Best for: {t.audience}</span>
           </div>
           <div style={{ display: 'grid', gap: '12px', alignContent: 'start' }}>
-            <span style={metaLabel}>Audience takeaways</span>
+            <span style={metaLabel}>Takeaway</span>
             <div style={{ display: 'grid', gap: '10px' }}>{t.takeaways.map((k) => <Bullet key={k}>{k}</Bullet>)}</div>
             <div style={{ display: 'flex', gap: '4px 20px', flexWrap: 'wrap' }}>
               <TextLink href={t.pdf} target="_blank" rel="noopener">Topic sheet (PDF)<span className="visually-hidden">: {t.title}, opens in a new tab</span></TextLink>
@@ -200,7 +206,7 @@ function RequestForm() {
               </div>
               <TextField id="sp-location" label="Location" required={form.setting !== 'Virtual'} hint="City and state. Not needed for virtual events." {...ctrl('location')} />
               <div style={twoUp}>
-                <TextField id="sp-audience" label="Who is the audience?" hint="For example: graduating seniors, ABA therapists, families" {...ctrl('audience')} />
+                <TextField id="sp-audience" label="Who is the audience?" hint="For example: I/DD service providers, educators, caregivers" {...ctrl('audience')} />
                 <SelectField id="sp-audienceSize" label="Audience size" options={AUDIENCE_OPTIONS} {...ctrl('audienceSize')} />
               </div>
               <div style={twoUp}>
@@ -251,7 +257,7 @@ export default function Speaking() {
   return (
     <>
       <Intro />
-      <WhoHeHelps />
+      <CredentialsAudiences />
       <Topics />
       <Field
         tone="red"

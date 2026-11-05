@@ -4,8 +4,8 @@
 //   npm run import-placements -- <report.xlsx> <media-id>
 //
 // Writes src/data/placements/<media-id>.json with the report's headline stats, every
-// Colorado / Denver-market placement (shown on the business site) and the largest national
-// placements (shown on the speaking page). Then add or update the matching item in
+// Colorado / Denver-market placement (business site), every TV/radio station and the largest
+// national print/online placements (speaking page ticker). Then add or update the matching item in
 // src/data/media.js. See docs/ADDING-MEDIA.md.
 import ExcelJS from 'exceljs';
 import { mkdir, writeFile } from 'node:fs/promises';
@@ -17,7 +17,9 @@ if (!file || !id || !/^[a-z0-9-]+$/.test(id)) {
   process.exit(1);
 }
 
-const NATIONAL_LIMIT = 40; // largest outlets kept for the national "As seen in" strip
+const NATIONAL_LIMIT = 100; // largest print/online outlets kept for the national ticker
+// TV and radio stations, kept in full for the "On air" row of the ticker.
+const BROADCAST = /\b(TV|ABC|NBC|CBS|FOX|CW|PBS|NPR|radio)\b|-TV\b|\bTV\b/i;
 
 const text = (v) => {
   if (v == null) return '';
@@ -82,7 +84,9 @@ const unique = [...placements.reduce((m, p) => {
 const isColorado = (p) => p.state === 'CO' || /denver|colorado/i.test(p.market);
 const byReach = (a, b) => (b.reach || 0) - (a.reach || 0);
 const colorado = unique.filter(isColorado).sort(byReach);
-const national = unique.filter((p) => !isColorado(p) && p.state.length === 2).sort(byReach).slice(0, NATIONAL_LIMIT);
+const isBroadcast = (p) => BROADCAST.test(p.outlet);
+const broadcast = unique.filter((p) => isBroadcast(p) && !isColorado(p)).sort(byReach);
+const national = unique.filter((p) => !isColorado(p) && !isBroadcast(p) && p.state.length === 2).sort(byReach).slice(0, NATIONAL_LIMIT);
 
 const out = {
   story: meta['Story Title'] || '',
@@ -94,10 +98,11 @@ const out = {
     metroMarkets: meta['Total US metro markets reached'] || '',
   },
   colorado,
+  broadcast,
   national,
 };
 
 const dir = fileURLToPath(new URL('../src/data/placements/', import.meta.url));
 await mkdir(dir, { recursive: true });
 await writeFile(dir + id + '.json', JSON.stringify(out, null, 1) + '\n');
-console.log(`✓ ${id}: ${placements.length} placements read, ${colorado.length} Colorado/Denver outlets, ${national.length} national outlets kept.`);
+console.log(`✓ ${id}: ${placements.length} placements read, ${colorado.length} Colorado/Denver, ${broadcast.length} broadcast and ${national.length} national print/online outlets kept.`);

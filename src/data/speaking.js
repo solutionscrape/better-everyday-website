@@ -1,72 +1,40 @@
-// Speaking page content. James speaks nationally to three audiences:
-// 1. nonprofits serving people with disabilities and their families,
-// 2. behavioral health and physical health providers (training on his methods),
-// 3. high school graduations, schools and youth events (purpose and passion).
-// DRAFT: topic wording and takeaways to confirm with James.
+// Speaking page content.
+// Headline, about text, topics, credentials and ideal audiences follow the speaker one-sheet.
 // After editing TOPICS, rebuild the topic-sheet PDFs: `npm run topic-pdfs`.
 
-export const AUDIENCES = [
-  {
-    title: 'Nonprofits serving people with disabilities',
-    desc: 'Organizations that support individuals with intellectual and developmental disabilities, autism, Down syndrome and their families. James shows how movement builds strength, confidence and connection, and how to make it part of your programs.',
-    examples: 'Disability and advocacy nonprofits · adaptive sports programs · family support organizations · day programs',
-  },
-  {
-    title: 'Behavioral and physical health providers',
-    desc: 'Any organization delivering behavioral health or physical health services. James walks your team through the methods he uses every week, so you can add inclusive movement to the care you already give clients with special needs.',
-    examples: 'ABA and behavioral therapy centers · physical and occupational therapy practices · mental health agencies · group homes and residential care',
-  },
-  {
-    title: 'Graduations, schools and youth events',
-    desc: 'High school commencements, college events and youth gatherings. James speaks about finding your true purpose, following your passion and building a life of service rather than chasing money.',
-    examples: 'High school graduations · colleges and universities · youth leadership events · student assemblies',
-  },
-];
-
+// The three signature topics, from the speaker one-sheet (James_Anderson_Speaker_One_Sheet_Updated.pdf).
 export const TOPICS = [
   {
-    id: 'inclusive-environments',
-    label: 'Introductory presentation',
-    title: 'Creating More Inclusive Fitness Environments',
-    desc: 'Why people with intellectual and developmental disabilities are still so underserved in health and fitness, and how any organization can change that. James shows what inclusive fitness looks like in practice and how to bring families and caregivers into the process.',
-    audience: 'Nonprofits · recreation and community centers · schools · health and therapy providers',
-    takeaways: [
-      'Why inclusive fitness is about more than exercise: confidence, independence and connection',
-      'How to adapt a space, a session and a coaching style so everyone can take part',
-      'Simple first steps your organization can start the following week',
-    ],
-    pdf: '/speaking/creating-more-inclusive-fitness-environments.pdf',
+    id: 'behavioral-health',
+    label: 'Signature topic',
+    title: 'Improving Behavioral Health Through Fitness Interventions',
+    desc: 'How structured movement can support emotional regulation, attention, and positive participation for individuals with I/DD.',
+    audience: 'I/DD service providers · behavioral health and ABA teams · educators',
+    takeaways: ['Practical ways to build supportive, individualized movement routines.'],
+    pdf: '/speaking/improving-behavioral-health-through-fitness-interventions.pdf',
   },
   {
-    id: 'coaching-methods',
-    label: 'Staff training',
-    title: 'Inclusive Coaching Methods for Your Team',
-    desc: 'A working session for behavioral and physical health teams. James shares the methods he uses with his own clients, drawing on his strength and conditioning certification and his background as a Registered Behavior Technician, so your staff can add inclusive movement to the care they already give.',
-    audience: 'Behavioral health and ABA providers · physical and occupational therapy teams · residential and day program staff',
-    takeaways: [
-      'How James adapts exercises in real time to each person’s abilities and goals',
-      'Behavioral strategies that keep clients motivated and engaged in movement',
-      'How to work alongside parents, caregivers and support staff',
-    ],
-    pdf: '/speaking/inclusive-coaching-methods-for-your-team.pdf',
+    id: 'what-is-inclusive-fitness',
+    label: 'Signature topic',
+    title: 'What Is Inclusive Fitness and Why Does It Matter?',
+    desc: 'An introduction to participation barriers and the value of welcoming people of all abilities into fitness.',
+    audience: 'Disability advocacy groups · fitness professionals · community and recreation programs',
+    takeaways: ['Ways to adapt activities and create more welcoming environments.'],
+    pdf: '/speaking/what-is-inclusive-fitness-and-why-does-it-matter.pdf',
   },
   {
-    id: 'purpose-over-paycheck',
-    label: 'Keynote',
-    title: 'Purpose Over Paycheck',
-    desc: 'A commencement-style message about choosing a life with meaning. James talks about finding the work you were made for, following your passion even when it is not the easy path, and measuring success by the people you serve rather than the money you make.',
-    audience: 'High school graduations · colleges and universities · youth leadership programs',
-    takeaways: [
-      'How to recognize the work you were made for',
-      'Why following your passion is worth it, even when it is not the easy path',
-      'How to measure success by the people you serve, not the money you make',
-    ],
-    pdf: '/speaking/purpose-over-paycheck.pdf',
+    id: 'healthy-habits',
+    label: 'Signature topic',
+    title: 'The Importance of Modeling Healthy Habits for Your Children',
+    desc: 'How parents and caregivers can lead by example through movement and sustainable daily routines.',
+    audience: 'Caregivers · parent groups · family wellness conferences',
+    takeaways: ['Realistic strategies for making healthy habits part of family life.'],
+    pdf: '/speaking/the-importance-of-modeling-healthy-habits-for-your-children.pdf',
   },
 ];
 
 export const FORMATS = [
-  'Keynotes and commencement addresses',
+  'Keynotes and conference sessions',
   'Staff training and workshops on his inclusive coaching methods',
   'Hands-on movement demonstrations',
   'Conference breakout sessions',
@@ -74,19 +42,29 @@ export const FORMATS = [
   'Panels, podcasts and media interviews',
 ];
 
+export const SPEAKER = {
+  headline: 'Making Fitness Accessible to Every Body',
+  roles: 'Keynote speaker · Author · Inclusive fitness advocate',
+  about: 'James Anderson is the founder of Better Everyday Athletics LLC, author of Legacy of Health, and a certified strength and conditioning specialist. He works with individuals with intellectual and developmental disabilities (I/DD), combining individualized exercise programming with behavior-support strategies to build confidence, independence, and lifelong healthy habits.',
+};
+
+export const CREDENTIALS = ['NSCA-CSCS', 'NASM-CES', 'ACSM Autism Exercise Specialist', 'ACSM Certified Inclusive Fitness Trainer', 'Former Registered Behavior Technician'];
+
+export const IDEAL_AUDIENCES = ['Disability advocacy groups', 'I/DD service providers', 'Educators', 'Caregivers', 'Fitness professionals', 'Family wellness conferences'];
+
 export const SPEAKING_FACTS = [
-  { value: 'CSCS', label: 'NSCA certified' },
-  { value: 'RBT', label: 'Former behavior technician' },
+  { value: 'NSCA-CSCS', label: 'Strength & conditioning' },
+  { value: 'ACSM', label: 'Inclusive fitness & autism exercise' },
   { value: 'Author', label: 'Legacy of Health' },
-  { value: 'Nationwide', label: 'In person and virtual' },
+  { value: '50 states', label: 'Syndicated coverage' },
 ];
 
 /** Confirmed upcoming events. Add { date: 'YYYY-MM-DD', title, org, location } to show them. */
 export const SCHEDULE = [];
 export const NOW_BOOKING = 'Now booking 2027 events · in person and virtual';
 
-export const ORG_OPTIONS = ['Nonprofit', 'Behavioral health provider', 'Physical health or therapy provider', 'High school or graduation', 'College or university', 'Co-op or coalition of organizations', 'Conference or association', 'Company', 'Other'];
-export const FORMAT_OPTIONS = ['Keynote', 'Graduation or commencement address', 'Staff training or workshop', 'Conference breakout', 'Virtual talk or training', 'Panel, podcast or media', 'Not sure yet'];
+export const ORG_OPTIONS = ['Disability advocacy group', 'I/DD service provider', 'Behavioral or physical health provider', 'School or education organization', 'Fitness organization', 'Family wellness conference', 'Co-op or coalition of organizations', 'Other conference or association', 'Other'];
+export const FORMAT_OPTIONS = ['Keynote', 'Staff training or workshop', 'Conference breakout', 'Virtual talk or training', 'Panel, podcast or media', 'Not sure yet'];
 export const AUDIENCE_OPTIONS = ['Under 50', '50–250', '250–1,000', '1,000+', 'Not sure yet'];
 export const SETTING_OPTIONS = ['In person', 'Virtual', 'Either'];
 export const BUDGET_OPTIONS = ['Under $1,000', '$1,000–$2,500', '$2,500–$5,000', '$5,000+', 'Not sure yet'];

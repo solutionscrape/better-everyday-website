@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "fetch-blog-images": "node scripts/fetch-blog-images.mjs",
     "import-placements": "node scripts/import-placements.mjs",
-    "topic-pdfs": "node scripts/build-topic-pdfs.mjs"
+    "topic-pdfs": "node scripts/build-topic-pdfs.mjs",
+    "fetch-press-logos": "node scripts/fetch-press-logos.mjs"
   },
   "dependencies": {
     "react": "^19.1.0",
