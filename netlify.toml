@@ -11,3 +11,17 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Addresses from the old Squarespace site and the printed speaker one-sheet.
+[[redirects]]
+  from = "/speaking-engagements"
+  to = "/#speaking"
+  status = 301
+[[redirects]]
+  from = "/speaking"
+  to = "/#speaking"
+  status = 301
+[[redirects]]
+  from = "/media"
+  to = "/#media"
+  status = 301
