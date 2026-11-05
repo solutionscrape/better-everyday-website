@@ -33,7 +33,16 @@ jobs:
       - run: npm run fetch-press-logos -- ${{ inputs.refetch && '--all' || '' }}
         env:
           FORCE_COLOR: '0'
+      - name: Save logos as an artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: press-logos
+          path: |
+            public/img/press
+            src/data/press-logos.json
       - name: Commit logos
+        # Some repository rules block bot pushes; the artifact above is the fallback.
+        continue-on-error: true
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
