@@ -40,6 +40,15 @@ jobs:
           path: |
             public/img/press
             src/data/press-logos.json
+      - name: Print logos into the log
+        # For environments that can read job logs but not artifacts. Decode the lines between
+        # the markers with `base64 -d | tar xz`.
+        run: |
+          tar czf - public/img/press src/data/press-logos.json | base64 -w 76 > logos.b64
+          echo "sha256 $(base64 -d logos.b64 | sha256sum)"
+          echo "----- BEGIN PRESS LOGOS -----"
+          cat logos.b64
+          echo "----- END PRESS LOGOS -----"
       - name: Commit logos
         # Some repository rules block bot pushes; the artifact above is the fallback.
         continue-on-error: true
