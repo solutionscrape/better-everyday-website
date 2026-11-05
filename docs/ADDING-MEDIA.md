@@ -44,7 +44,8 @@ Wait until the piece is **live** and you have its public link.
    ```
 
    This writes `src/data/placements/my-story-id.json` with the headline numbers, every
-   Colorado/Denver placement and the 40 largest national placements. In `media.js`, import that
+   Colorado/Denver placement, every TV and radio station, and the 100 largest national print and online
+   placements. In `media.js`, import that
    file and set `placements: myStory` on the entry. Then review what will show:
    - `hide`: patterns for links that shouldn't be featured, such as campus classifieds, market-data pages or off-topic sites
    - `rename`: fixes for garbled outlet names in the report
